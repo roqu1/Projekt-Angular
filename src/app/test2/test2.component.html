@@ -1,0 +1,159 @@
+<body>
+  <div class="Upgrade">
+    <h1 class="green shadow">Upgrades</h1>
+    <h2 class="counter" style="width:100%">Counter: {{ counter }}</h2>
+
+    <table class="gebauede tab" style="width: 100%">
+      <div class="tabs">
+        <input type="radio" name="tab-btn" id="tab-btn-1" value="" />
+        <label for="tab-btn-1">Wohnraum</label>
+
+        <input type="radio" name="tab-btn" id="tab-btn-2" value="" checked />
+        <label for="tab-btn-2">Arbeitstellen</label>
+
+        <input type="radio" name="tab-btn" id="tab-btn-3" value="" />
+        <label for="tab-btn-3">Infrastruktur</label>
+
+        <div id="content-1">
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black zelt">Zelt</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+          <br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black bungalow">Bungalow</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+          <br />
+          <label class="tooltip">
+            <button type="button" class="tabcontent">
+              <th class="black haus">Haus</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          ><br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black einfamilienhaus">Einfamilienhaus</th>
+            </button>
+
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          ><br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black mehrfamilienhaus">Mehrfamilienhaus</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+        </div>
+        <div id="content-2">
+          <label class="tooltip">
+            <button type="button" class="tabcontent" (click)="fischer()">
+              <th class="black fischer">
+                Fischer: {{ fischerAnzahl }}
+                <p style="margin-top:-5px;">Preis: {{ preis_fisch }}</p>
+              </th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+          <br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent" (click)="feld()">
+              <th class="black feld">
+                Feld: {{ feldAnzahl }}
+                <p style="margin-top:-5px;">Preis: {{ preis_feld }}</p>
+              </th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+          <br />
+          <label class="tooltip">
+            <button type="button" class="tabcontent">
+              <th class="black holzfäller">Holzfäller</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          ><br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black mine">Mine</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          ><br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black öl">Öl</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+        </div>
+        <div id="content-3">
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black erdstrasse">Erdstrasse</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+          <br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black wasserversorgung">Wasserversorgung</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+          <br />
+          <label class="tooltip">
+            <button type="button" class="tabcontent">
+              <th class="black strom">Strom</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          ><br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black straße">Straße</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          ><br />
+          <label class="tooltip"
+            ><button type="button" class="tabcontent">
+              <th class="black WdT">Wunder der Technik</th>
+            </button>
+            <div class="tip_container">
+              <span class="tooltiptext">Tooltip text</span>
+            </div></label
+          >
+        </div>
+      </div>
+    </table>
+  </div>
+</body>
