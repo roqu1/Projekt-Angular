@@ -1,5 +1,3 @@
 export class ClickerModule {
-  constructor(public counter: number) {
-  }
-
+  constructor(public counter: number, public addcounter: number) {}
 }
