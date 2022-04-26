@@ -11,6 +11,22 @@
   margin-left: 2px;
 }
 
+#content-2 {
+  position: relative;
+}
+
+.upgrade-left {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  height: 100%;
+} 
+.upgrade-mid {
+  display: inline-block;
+  justify-content: center;
+  
+}
+
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -142,7 +158,6 @@ button {
   font-family: Minecraftia;
   cursor: pointer;
   transition: 0.1s;
-  margin-left: -50px;
   display: inline-block;
 }
 
