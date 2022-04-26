@@ -60,7 +60,7 @@ export class Test2Component implements OnInit {
           this.item[2] = anzahl += 1;
           // this.update();
           console.log('gekauft');
-          Math.round((preis *= 1.5));
+          Math.round((preis *= 1.35));
           this.item[1] = preis;
           return this.item;
         } else {
@@ -72,7 +72,7 @@ export class Test2Component implements OnInit {
           this.item[2] = anzahl += 1;
           //this.update(); // macht das gleiche wie addcounter
           console.log('Mehr gekauft');
-          preis = preis *= 1.5;
+          preis = preis *= 1.35;
           this.item[1] = preis;
           return this.item;
         } else {
