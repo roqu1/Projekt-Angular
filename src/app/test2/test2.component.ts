@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClickerModule } from '../counter/clicker.module';
-import {Arbeitstellen} from '../counter/Arbeitstellen';
+import { Arbeitstellen } from '../counter/Arbeitstellen';
 @Component({
   selector: 'app-test2',
   templateUrl: './test2.component.html',
@@ -16,12 +16,13 @@ export class Test2Component implements OnInit {
   item: number[] = [];
   count: number[];
   addtocounts: number;
-  mitarbeiter:number;
+  mitarbeiterGesamt: number;
+  mitarbeiter: number;
+  preis_zelt:number;
+  zeltAnzahl:number;
   timer = setInterval(() => {
     this.interval();
   }, 1000);
-  
-
 
   constructor() {
     this.counter = 1500; // von Datastorage setzen
@@ -33,7 +34,10 @@ export class Test2Component implements OnInit {
     this.item;
     this.addtocounts;
     this.timer;
-    this.mitarbeiter=0;
+    this.mitarbeiterGesamt = 0;
+    this.mitarbeiter = 5;
+    this.preis_zelt=10;
+    this.zeltAnzahl=0;
   }
 
   update() {
@@ -46,10 +50,9 @@ export class Test2Component implements OnInit {
 
   kaufen(preis: number) {
     this.counter -= Math.round(preis);
-    
   }
 
-  addtocount(count) {
+  addtocount() {
     this.addcounter = this.feldAnzahl * 2 + this.fischerAnzahl * 1; //jedes mal neu hinzufügen wenn es gibt
     this.update();
   }
@@ -90,20 +93,76 @@ export class Test2Component implements OnInit {
   }
 
   feld() {
+    if(this.mitarbeiter>=5){
     this.funktion_kaufen(this.preis_feld, this.feldAnzahl, this.addcounter);
     this.preis_feld = Math.round(this.item[1]);
     this.feldAnzahl = this.item[2];
-    this.addtocounts = 2;
-    this.addtocount(this.addtocounts);
+   
+    this.addtocount();
+    this.mitarbeiterGesamt+=5;
+    this.mitarbeiter-=5;
+    } else {
+      alert("Keine freie Mitarbeiter");
+    }
   }
 
   fischer() {
+    if(this.mitarbeiter>=2){
     this.funktion_kaufen(this.preis_fisch, this.fischerAnzahl, this.addcounter);
     this.preis_fisch = Math.round(this.item[1]);
     this.fischerAnzahl = this.item[2];
     this.addtocounts = 1;
-    this.addtocount(this.addtocounts);
+    this.addtocount();
+    this.mitarbeiterGesamt+=2;
+    this.mitarbeiter-=2
+  } else {
+    alert("Keine freie Mitarbeiter");
   }
+}
+
+
+
+  // Bewohner kaufen
+  bewohner(preis, anzahl, addcounter) {
+    if (this.counter <= 0) {
+      alert('Kein Geld');
+    } else {
+      if (anzahl == 0) {
+        // preis; // default in die hauptmethode einsetzen
+        if (this.counter >= preis) {
+          this.kaufen(preis);
+          this.item[2] = anzahl += 1;
+          console.log('gekauft');
+          Math.round((preis *= 1.2));
+          this.item[1] = preis;
+          return this.item;
+        } else {
+          alert('Kein Geld');
+        }
+      } else if (anzahl > 0) {
+        if (this.counter >= preis) {
+          this.kaufen(preis);
+          this.item[2] = anzahl += 1;
+          console.log('Mehr gekauft');
+          preis = preis *= 1.2;
+          this.item[1] = preis;
+          return this.item;
+        } else {
+          alert('Kein Geld');
+        }
+      } else {
+        alert('Es gibt ein Fehler');
+      }
+    }
+  }
+  
+  
+  
+  zelt() {
+    
+  }
+
+
 
   ngOnInit() {}
 }

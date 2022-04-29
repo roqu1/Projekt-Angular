@@ -40,7 +40,7 @@
   margin-left: 2px;
 }
 
-#content-2 {
+#content-2, #content-1, #content-3 {
   position: relative;
 }
 
@@ -48,6 +48,14 @@
   display: inline-block;
   position: absolute;
   left: 0;
+  height: 100%;
+  
+}
+
+.upgrade-right {
+  display: inline-block;
+  position: absolute;
+  right: 0;
   height: 100%;
   
 } 
@@ -350,3 +358,4 @@ th {
 .italic {
   font-style: italic;
 }
+

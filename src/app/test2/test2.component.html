@@ -3,7 +3,7 @@
     <h1 class="green shadow">Upgrades</h1>
     <h2 class="counter" style="width:100%">Counter: {{ counter }}</h2>
     <p>{{addcounter}} pro Sekunde</p>
-    <p>Mitarbeiter {{mitarbeiter}}  </p>
+    <p>Mitarbeiter arbeiten: {{mitarbeiterGesamt}}/Freie Mitarbeiter: {{mitarbeiter}}  </p>
 
     <table class="gebauede tab" style="width: 100%">
       <div class="tabs">
@@ -17,13 +17,20 @@
         <label for="tab-btn-3">Infrastruktur</label>
 
         <div id="content-1">
+        <div class="upgrade-left">
+        <th class="black"> Preis: {{preis_zelt}}</th>
+        </div>
           <label class="tooltip">
             <button type="button" class="tabcontent">
-              <th class="black zelt">Zelt</th>
+              <th class="black zelt">Zelt: {{zeltAnzahl}}</th>
             </button>
             <div class="tip_container">
               <span class="tooltiptext">Tooltip text</span>
             </div></label>
+
+            <div class="upgrade-right">
+            <th class="black"> 2 Bewohner</th>
+            </div>
           <br/>
           <label class="tooltip">
             <button type="button" class="tabcontent">
@@ -60,7 +67,7 @@
         </div>
         <div id="content-2">
           <div class="upgrade-left">
-          <th class="black fischer" > Preis: {{preis_fisch}}</th>
+          <th class="black" > Preis: {{preis_fisch}}</th>
           </div>
           <div class="upgrade-mid">
           <label class="tooltip">
@@ -70,9 +77,14 @@
                 Fischer: {{ fischerAnzahl }}
               </th>
             </button>
+
+            
             <div class="tip_container">
               <span class="tooltiptext">Tooltip text</span>
             </div></label>
+            <div class="upgrade-right">
+            <th class="black " > 1kp/s</th>
+            </div>
           <br />
           <label class="tooltip">
             <button type="button" class="tabcontent" (click)="feld()">
