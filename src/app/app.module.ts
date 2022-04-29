@@ -9,7 +9,7 @@ import { Test2Component } from './test2/test2.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent,Test2Component ],
+  declarations: [ AppComponent, HelloComponent,Test2Component, MitteComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
