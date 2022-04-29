@@ -9,25 +9,29 @@
   text-align: center;
   background-color: grey;
   margin: 0;
-  position: absolute;
+  
 }
+
 .leftcookie, .middlecookie, .rightcookie {
   height: 100vh;
   display: inline-block;
 }
 
 .leftcookie {
-  width: 500px;
+  width: 32vw;
+  background-color: #00aa00;
 }
 
 .middlecookie {
-  width: 300px;
+  width: 38vw;
+  background-color: yellowgreen;
 }
 
 .rightcookie {
   float: right;
-  width: 450px;
+  width: 30vw;
   position: relative;
+  background-color: #0000aa;
 }
 
 
@@ -289,6 +293,7 @@ th {
 
 .green.shadow {
   text-shadow: 3px 3px #153f15;
+  margin: 0;
 }
 
 .aqua {
