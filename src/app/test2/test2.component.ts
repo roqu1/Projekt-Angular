@@ -16,9 +16,12 @@ export class Test2Component implements OnInit {
   item: number[] = [];
   count: number[];
   addtocounts: number;
+  mitarbeiter:number;
   timer = setInterval(() => {
     this.interval();
   }, 1000);
+  
+
 
   constructor() {
     this.counter = 1500; // von Datastorage setzen
@@ -30,6 +33,7 @@ export class Test2Component implements OnInit {
     this.item;
     this.addtocounts;
     this.timer;
+    this.mitarbeiter=0;
   }
 
   update() {
@@ -42,6 +46,7 @@ export class Test2Component implements OnInit {
 
   kaufen(preis: number) {
     this.counter -= Math.round(preis);
+    
   }
 
   addtocount(count) {
