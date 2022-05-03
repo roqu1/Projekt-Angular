@@ -30,7 +30,7 @@ export class Test2Component implements OnInit {
   }, 1000);
 
   constructor() {
-    this.counter = 1500; // von Datastorage setzen
+    this.counter = 0; // von Datastorage setzen
     this.fischerAnzahl = 0; // null am anfang wichtig
     this.feldAnzahl = 0;
     this.preis_feld = 25;
@@ -41,7 +41,7 @@ export class Test2Component implements OnInit {
     this.timer;
     this.mitarbeiterGesamt = 0;
     this.mitarbeiter = 5;
-    this.preis_zelt=10;
+    this.preis_zelt=200;
     this.zeltAnzahl=0;
     this.preis_erdstrasse=500;
     this.erdstrasseAnzahl=0;
@@ -116,6 +116,7 @@ export class Test2Component implements OnInit {
   }
 
   fischer() {
+    if(this.counter>this.preis_fisch) {
     if(this.mitarbeiter>=2){
     this.funktion_kaufen(this.preis_fisch, this.fischerAnzahl, this.addcounter);
     this.preis_fisch = Math.round(this.item[1]);
@@ -124,8 +125,12 @@ export class Test2Component implements OnInit {
     this.addtocount();
     this.mitarbeiterGesamt+=2;
     this.mitarbeiter-=2
+  
   } else {
     alert("Keine freie Mitarbeiter");
+  } 
+} else {
+    alert("Kein Geld Leider")
   }
 }
 
@@ -166,10 +171,14 @@ export class Test2Component implements OnInit {
   
   //Wohnraum
   zelt() {
+    if(this.counter>=this.preis_zelt) {
     this.funktion_kaufen2(this.preis_zelt,this.zeltAnzahl);
     this.preis_zelt = Math.round(this.item[1]);
     this.zeltAnzahl = this.item[2];
     this.mitarbeiter +=2;
+    } else {
+      alert("Kein Geld leider")
+    }
   }
 
   //Infrastruktur
@@ -181,7 +190,7 @@ export class Test2Component implements OnInit {
 
 
   erdstrasse() { //5 kps%
-    if(this.counter>this.preis_erdstrasse) {
+    if(this.counter>=this.preis_erdstrasse) {
     this.funktion_kaufen2(this.preis_erdstrasse,this.erdstrasseAnzahl)
     this.preis_erdstrasse = Math.round(this.item[1]);
     this.erdstrasseAnzahl = this.item[2];
