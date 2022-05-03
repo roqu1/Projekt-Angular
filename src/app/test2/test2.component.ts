@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClickerModule } from '../counter/clicker.module';
 import { Arbeitstellen } from '../counter/Arbeitstellen';
+
 @Component({
   selector: 'app-test2',
   templateUrl: './test2.component.html',
@@ -14,12 +15,16 @@ export class Test2Component implements OnInit {
   feldAnzahl: number;
   preis_feld: number;
   item: number[] = [];
+  percentages:number[] = [];
+  percentageErdstrasse:number;
   count: number[];
   addtocounts: number;
   mitarbeiterGesamt: number;
   mitarbeiter: number;
   preis_zelt:number;
   zeltAnzahl:number;
+  preis_erdstrasse:number;
+  erdstrasseAnzahl:number;
   timer = setInterval(() => {
     this.interval();
   }, 1000);
@@ -38,6 +43,10 @@ export class Test2Component implements OnInit {
     this.mitarbeiter = 5;
     this.preis_zelt=10;
     this.zeltAnzahl=0;
+    this.preis_erdstrasse=500;
+    this.erdstrasseAnzahl=0;
+    this.percentageErdstrasse=5;
+
   }
 
   update() {
@@ -91,7 +100,7 @@ export class Test2Component implements OnInit {
       }
     }
   }
-
+  // Arbeitstellen
   feld() {
     if(this.mitarbeiter>=5){
     this.funktion_kaufen(this.preis_feld, this.feldAnzahl, this.addcounter);
@@ -122,8 +131,8 @@ export class Test2Component implements OnInit {
 
 
 
-  // Bewohner kaufen
-  bewohner(preis, anzahl, addcounter) {
+  // funktion_kaufen2 kaufen
+  funktion_kaufen2(preis, anzahl) {
     if (this.counter <= 0) {
       alert('Kein Geld');
     } else {
@@ -132,7 +141,6 @@ export class Test2Component implements OnInit {
         if (this.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          console.log('gekauft');
           Math.round((preis *= 1.2));
           this.item[1] = preis;
           return this.item;
@@ -143,7 +151,6 @@ export class Test2Component implements OnInit {
         if (this.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          console.log('Mehr gekauft');
           preis = preis *= 1.2;
           this.item[1] = preis;
           return this.item;
@@ -157,9 +164,32 @@ export class Test2Component implements OnInit {
   }
   
   
-  
+  //Wohnraum
   zelt() {
-    
+    this.funktion_kaufen2(this.preis_zelt,this.zeltAnzahl);
+    this.preis_zelt = Math.round(this.item[1]);
+    this.zeltAnzahl = this.item[2];
+    this.mitarbeiter +=2;
+  }
+
+  //Infrastruktur
+  percentage(counter,percentage) {
+    counter = (this.counter/100)*percentage;
+    this.percentages[1] = Math.round(counter);
+    return this.percentages;
+  }
+
+
+  erdstrasse() { //5 kps%
+    if(this.counter>this.preis_erdstrasse) {
+    this.funktion_kaufen2(this.preis_erdstrasse,this.erdstrasseAnzahl)
+    this.preis_erdstrasse = Math.round(this.item[1]);
+    this.erdstrasseAnzahl = this.item[2];
+    this.percentage(this.counter,this.percentageErdstrasse);
+    this.addcounter+=this.percentages[1];
+    } else {
+      alert("Kein Geld leider")
+    }
   }
 
 
