@@ -27,10 +27,8 @@ export class MitteComponent extends Test2Component implements OnInit {
     
     einblenden(){
      
-      let text = this.x.toString();
-      document.getElementById(text).style.visibility = "visible";
-      this.x += 1
-      
+      let text = this.data.arbeitstellen.fischeranzahl.toString();
+     document.getElementById(text).style.visibility = "visible";
     }
   ngOnInit() {
   }
