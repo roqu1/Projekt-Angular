@@ -11,10 +11,6 @@
   margin: 0;
 }
 
-.leftcookie, .middlecookie, .rightcookie {
-  height: 100vh;
-  display: inline-block;
-}
 
 .leftcookie {
   width: 32vw;

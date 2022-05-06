@@ -40,7 +40,7 @@ export class Test2Component implements OnInit {
     this.mitarbeiterGesamt = 0;
     this.mitarbeiter = 5;
     this.preis_zelt=200;
-    this.zeltAnzahl=0;
+    
     this.preis_erdstrasse=500;
     this.erdstrasseAnzahl=0;
     this.percentageErdstrasse=5;
@@ -176,20 +176,25 @@ export class Test2Component implements OnInit {
   //Wohnraum
   zelt() {
     if(this.counter>=this.preis_zelt) {
-    this.funktion_kaufen2(this.preis_zelt,this.data.wohnraum.zeltAnzahl);
+    this.funktion_kaufen2(this.preis_zelt,this.data.wohnraum.zeltanzahl);
     this.preis_zelt = Math.round(this.item[1]);
-    this.data.wohnraum.zeltAnzahl = this.item[2];
+    this.data.wohnraum.zeltanzahl = this.item[2];
     this.mitarbeiter +=2;
     } else {
       alert("Kein Geld leider")
     }
   }
 
+  
+  
+  
   //Infrastruktur
   percentage(counter,percentage) {
-    counter = (this.counter/100)*percentage;
+    counter = (this.addcounter/100)*percentage;
     this.percentages[1] = Math.round(counter);
+    console.log(this.percentages[1]);
     return this.percentages;
+    
   }
 
 
@@ -199,7 +204,7 @@ export class Test2Component implements OnInit {
     this.preis_erdstrasse = Math.round(this.item[1]);
     this.erdstrasseAnzahl = this.item[2];
     this.percentage(this.counter,this.percentageErdstrasse);
-    this.addcounter+=this.percentages[1];
+    
     } else {
       alert("Kein Geld leider")
     }

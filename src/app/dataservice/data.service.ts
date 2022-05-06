@@ -9,8 +9,6 @@ export class DataService {
   private arbeit : Arbeitstellen;
   private wohn : Wohnraum;
   constructor() {
-   this.items.push(new Model(1, 'Fischer', 0));
-    this.items.push(new Model(2, 'Feld', 0));
     this.arbeit = { "feldanzahl": 0,
       "fischeranzahl": 0, "holzfaeller" : 0, "mine" : 0, "oel" : 0 
     }
@@ -28,6 +26,6 @@ export class DataService {
  }
 
  get wohnraum() {
-   return this.wohnraum;
+   return this.wohn;
  }
 }
