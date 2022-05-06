@@ -30,7 +30,7 @@ export class Test2Component implements OnInit {
   }, 1000);
 
   constructor(public data : DataService) {
-    this.counter = 55550; // von Datastorage setzen
+    this.counter = 55555; // von Datastorage setzen
     this.preis_feld = 25;
     this.addcounter = 0; // null am anfang wichtig
     this.preis_fisch = 15;
