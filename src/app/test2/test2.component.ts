@@ -176,9 +176,9 @@ export class Test2Component implements OnInit {
   //Wohnraum
   zelt() {
     if(this.counter>=this.preis_zelt) {
-    this.funktion_kaufen2(this.preis_zelt,this.zeltAnzahl);
+    this.funktion_kaufen2(this.preis_zelt,this.data.wohnraum.zeltAnzahl);
     this.preis_zelt = Math.round(this.item[1]);
-    this.zeltAnzahl = this.item[2];
+    this.data.wohnraum.zeltAnzahl = this.item[2];
     this.mitarbeiter +=2;
     } else {
       alert("Kein Geld leider")
