@@ -11,8 +11,7 @@ export class Test2Component implements OnInit {
   counter: number;
   preis_fisch: number;
   addcounter: number;
-  fischerAnzahl: number;
-  feldAnzahl: number;
+ 
   preis_feld: number;
   item: number[] = [];
   percentages:number[] = [];
@@ -29,10 +28,8 @@ export class Test2Component implements OnInit {
     this.interval();
   }, 1000);
 
-  constructor() {
+  constructor(public data : DataService) {
     this.counter = 0; // von Datastorage setzen
-    this.fischerAnzahl = 0; // null am anfang wichtig
-    this.feldAnzahl = 0;
     this.preis_feld = 25;
     this.addcounter = 0; // null am anfang wichtig
     this.preis_fisch = 15;
@@ -62,7 +59,7 @@ export class Test2Component implements OnInit {
   }
 
   addtocount() {
-    this.addcounter = this.feldAnzahl * 2 + this.fischerAnzahl * 1; //jedes mal neu hinzufügen wenn es gibt
+    this.addcounter = this.data.arbeitstellen.feldanzahl * 2 + this.data.arbeitstellen.fischeranzahl  * 1; //jedes mal neu hinzufügen wenn es gibt
     this.update();
   }
 
@@ -103,9 +100,9 @@ export class Test2Component implements OnInit {
   // Arbeitstellen
   feld() {
     if(this.mitarbeiter>=5){
-    this.funktion_kaufen(this.preis_feld, this.feldAnzahl, this.addcounter);
+    this.funktion_kaufen(this.preis_feld, this.data.arbeitstellen.feldanzahl, this.addcounter);
     this.preis_feld = Math.round(this.item[1]);
-    this.feldAnzahl = this.item[2];
+    this.data.arbeitstellen.feldanzahl = this.item[2];
    
     this.addtocount();
     this.mitarbeiterGesamt+=5;
@@ -118,9 +115,9 @@ export class Test2Component implements OnInit {
   fischer() {
     if(this.counter>this.preis_fisch) {
     if(this.mitarbeiter>=2){
-    this.funktion_kaufen(this.preis_fisch, this.fischerAnzahl, this.addcounter);
+    this.funktion_kaufen(this.preis_fisch, this.data.arbeitstellen.fischeranzahl, this.addcounter);
     this.preis_fisch = Math.round(this.item[1]);
-    this.fischerAnzahl = this.item[2];
+   this.data.arbeitstellen.fischeranzahl = this.item[2];
     this.addtocounts = 1;
     this.addtocount();
     this.mitarbeiterGesamt+=2;
