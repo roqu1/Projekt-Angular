@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Arbeitstellen } from '../counter/Arbeitstellen';
+import { DataService } from '../dataservice/data.service';
 import { Test2Component } from '../test2/test2.component';
 
 @Component({
@@ -11,7 +12,7 @@ export class MitteComponent implements OnInit {
 
   
   x : number 
-  constructor(public data : DataService)) { 
+  constructor(public data : DataService) { 
    
   }
 

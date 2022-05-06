@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClickerModule } from '../counter/clicker.module';
 import { Arbeitstellen } from '../counter/Arbeitstellen';
+import { DataService } from '../dataservice/data.service';
 
 @Component({
   selector: 'app-test2',
@@ -29,7 +30,7 @@ export class Test2Component implements OnInit {
   }, 1000);
 
   constructor(public data : DataService) {
-    this.counter = 0; // von Datastorage setzen
+    this.counter = 55550; // von Datastorage setzen
     this.preis_feld = 25;
     this.addcounter = 0; // null am anfang wichtig
     this.preis_fisch = 15;
