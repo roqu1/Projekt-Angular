@@ -7,14 +7,12 @@ import { Test2Component } from '../test2/test2.component';
   templateUrl: './mitte.component.html',
   styleUrls: ['./mitte.component.css']
 })
-export class MitteComponent extends Test2Component implements OnInit {
+export class MitteComponent implements OnInit {
 
   
   x : number 
-  constructor(/*private test2Component:Test2Component*/) { 
-    super();
-    this.counter;
-
+  constructor(public data : DataService)) { 
+   
   }
 
   ausblenden() {
