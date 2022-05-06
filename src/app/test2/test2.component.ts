@@ -108,6 +108,9 @@ export class Test2Component implements OnInit {
     this.addtocount();
     this.mitarbeiterGesamt+=5;
     this.mitarbeiter-=5;
+      
+      let text = this.data.arbeitstellen.feldanzahl.toString();
+    document.getElementById(text+"feld").style.visibility = "visible";
     } else {
       alert("Keine freie Mitarbeiter");
     }
@@ -123,6 +126,9 @@ export class Test2Component implements OnInit {
     this.addtocount();
     this.mitarbeiterGesamt+=2;
     this.mitarbeiter-=2
+      
+        let text = this.data.arbeitstellen.fischeranzahl.toString();
+    document.getElementById(text+"fisch").style.visibility = "visible";
   
   } else {
     alert("Keine freie Mitarbeiter");
