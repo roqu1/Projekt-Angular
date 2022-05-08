@@ -9,15 +9,14 @@
   text-align: center;
   background-color: grey;
   margin: 0;
+  min-width: 393px;
 }
 
 
 
 
-.middlecookie {
-  width: 38vw;
-  background-color: yellowgreen;
-}
+
+
 
 .rightcookie {
   float: right;
@@ -46,6 +45,16 @@
   left: 0;
   height: 100%;
   
+}
+
+.upgrade-left > th {
+  font-size: 13px;
+  padding-top: 7px;
+}
+
+.upgrade-right > th {
+  font-size: 13px;
+  padding-top: 7px;
 }
 
 .upgrade-right {

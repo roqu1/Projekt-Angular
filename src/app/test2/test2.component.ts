@@ -10,34 +10,49 @@ import { DataService } from '../dataservice/data.service';
 })
 export class Test2Component implements OnInit {
   counter: number;
-  preis_fisch: number;
+ 
   addcounter: number;
-  preis_feld: number;
+  
   item: number[] = [];
   percentages:number[] = [];
   percentageErdstrasse:number;
   count: number[];
-  addtocounts: number;
   mitarbeiterGesamt: number;
   mitarbeiter: number;
+// Arbeitstellen
+  preis_fisch: number;
+  preis_feld: number;
+// Wohnraum
   preis_zelt:number;
-  zeltAnzahl:number;
+  preis_bungalow:number;
+  preis_einfamilienhaus:number;
+  preis_haus:number;
+  preis_mehrfamilienhaus:number;
+// Infrastruktur
   preis_erdstrasse:number;
   timer = setInterval(() => {
     this.interval();
   }, 1000);
 
   constructor(public data : DataService) {
-    this.counter = 9999955555; // von Datastorage setzen
-    this.preis_feld = 25;
+    this.counter = 9999955555; // DATASERVICE!!!!!!!
+   
     this.addcounter = 0; // null am anfang wichtig
-    this.preis_fisch = 15;
+   
     this.item;
-    this.addtocounts;
     this.timer;
     this.mitarbeiterGesamt = 0;
     this.mitarbeiter = 99995;
+    // Arbeitstellen
+    this.preis_feld = 25;
+    this.preis_fisch = 15;
+    // Wohnraum
     this.preis_zelt=200;
+    this.preis_bungalow=300;
+    this.preis_haus=500;
+    this.preis_einfamilienhaus=1000;
+    this.preis_mehrfamilienhaus=3000;
+    // Infrastruktur
     this.preis_erdstrasse=500;
     this.percentageErdstrasse=5;
 
@@ -55,9 +70,14 @@ export class Test2Component implements OnInit {
     this.counter -= Math.round(preis);
   }
 
-  addtocount() {
-    this.addcounter = this.data.arbeitstellen.feldanzahl * 2 + this.data.arbeitstellen.fischeranzahl  * 1; //jedes mal neu hinzufügen wenn es gibt
-    this.addcounter += this.data.infrastruktur.erdstrasseanzahl*((this.addcounter/100)*this.percentageErdstrasse);
+  addtocount() {//jedes mal neu hinzufügen wenn es gibt
+    this.addcounter = this.data.arbeitstellen.feldanzahl * 2;
+    this.addcounter += this.data.arbeitstellen.fischeranzahl  * 1; 
+
+
+
+    this.addcounter += Math.round(this.data.infrastruktur.erdstrasseanzahl*((this.addcounter/100)*this.percentageErdstrasse));
+    console.log(this.addcounter);
     this.update();
   }
 
@@ -119,7 +139,6 @@ export class Test2Component implements OnInit {
     this.funktion_kaufen(this.preis_fisch, this.data.arbeitstellen.fischeranzahl);
     this.preis_fisch = Math.round(this.item[1]);
    this.data.arbeitstellen.fischeranzahl = this.item[2];
-    this.addtocounts = 1;
     this.addtocount();
     this.mitarbeiterGesamt+=2;
     this.mitarbeiter-=2
@@ -181,18 +200,51 @@ export class Test2Component implements OnInit {
       alert("Kein Geld leider")
     }
   }
+  bungalow() {
+    if(this.counter>=this.preis_bungalow) {
+    this.funktion_kaufen2(this.preis_zelt,this.data.wohnraum.bungalowanzahl);
+    this.preis_bungalow = Math.round(this.item[1]);
+    this.data.wohnraum.bungalowanzahl = this.item[2];
+    this.mitarbeiter +=4;
+    } else {
+      alert("Kein Geld leider")
+    }
+  }
+  haus() {
+    if(this.counter>=this.preis_haus) {
+    this.funktion_kaufen2(this.preis_haus,this.data.wohnraum.hausanzahl);
+    this.preis_haus = Math.round(this.item[1]);
+    this.data.wohnraum.hausanzahl = this.item[2];
+    this.mitarbeiter +=6;
+    } else {
+      alert("Kein Geld leider")
+    }
+  }
+  einfamilienhaus() {
+    if(this.counter>=this.preis_einfamilienhaus) {
+    this.funktion_kaufen2(this.preis_einfamilienhaus,this.data.wohnraum.einfamilienhausanzahl);
+    this.preis_einfamilienhaus = Math.round(this.item[1]);
+    this.data.wohnraum.einfamilienhausanzahl = this.item[2];
+    this.mitarbeiter +=12;
+    } else {
+      alert("Kein Geld leider")
+    }
+  }
+  mehrfamilienhaus() {
+    if(this.counter>=this.preis_mehrfamilienhaus) {
+    this.funktion_kaufen2(this.preis_mehrfamilienhaus,this.data.wohnraum.mehrfamilienhausanzahl);
+    this.preis_mehrfamilienhaus = Math.round(this.item[1]);
+    this.data.wohnraum.mehrfamilienhausanzahl = this.item[2];
+    this.mitarbeiter +=30;
+    } else {
+      alert("Kein Geld leider")
+    }
+  }
 
   
   
   
   //Infrastruktur
-  percentage(counter,percentage) {
-    counter = (this.addcounter/100)*percentage;
-    this.percentages[1] = Math.round(counter);
-    console.log(this.percentages[1]);
-    return this.percentages;
-    
-  }
 
 
   erdstrasse() { //5 kps%
@@ -200,7 +252,6 @@ export class Test2Component implements OnInit {
     this.funktion_kaufen2(this.preis_erdstrasse,this.data.infrastruktur.erdstrasseanzahl);
     this.preis_erdstrasse = Math.round(this.item[1]);
     this.data.infrastruktur.erdstrasseanzahl = this.item[2];
-    this.percentage(this.counter,this.percentageErdstrasse);
     this.addtocount();
     
     } else {
