@@ -48,7 +48,7 @@ export class Test2Component implements OnInit {
   }
 
   interval() {
-    this.counter += this.addcounter;
+    this.counter += (this.addcounter/100)*100;
   }
 
   kaufen(preis: number) {
@@ -61,7 +61,7 @@ export class Test2Component implements OnInit {
     this.update();
   }
 
-  funktion_kaufen(preis, anzahl, addcounter) {
+  funktion_kaufen(preis, anzahl) {
     if (this.counter <= 0) {
       alert('Kein Geld');
     } else {
@@ -98,7 +98,7 @@ export class Test2Component implements OnInit {
   // Arbeitstellen
   feld() {
     if(this.mitarbeiter>=5){
-    this.funktion_kaufen(this.preis_feld, this.data.arbeitstellen.feldanzahl, this.addcounter);
+    this.funktion_kaufen(this.preis_feld, this.data.arbeitstellen.feldanzahl);
     this.preis_feld = Math.round(this.item[1]);
     this.data.arbeitstellen.feldanzahl = this.item[2];
    
@@ -116,7 +116,7 @@ export class Test2Component implements OnInit {
   fischer() {
     if(this.counter>this.preis_fisch) {
     if(this.mitarbeiter>=2){
-    this.funktion_kaufen(this.preis_fisch, this.data.arbeitstellen.fischeranzahl, this.addcounter);
+    this.funktion_kaufen(this.preis_fisch, this.data.arbeitstellen.fischeranzahl);
     this.preis_fisch = Math.round(this.item[1]);
    this.data.arbeitstellen.fischeranzahl = this.item[2];
     this.addtocounts = 1;
