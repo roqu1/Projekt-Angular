@@ -12,7 +12,6 @@ export class Test2Component implements OnInit {
   counter: number;
   preis_fisch: number;
   addcounter: number;
- 
   preis_feld: number;
   item: number[] = [];
   percentages:number[] = [];
@@ -24,7 +23,6 @@ export class Test2Component implements OnInit {
   preis_zelt:number;
   zeltAnzahl:number;
   preis_erdstrasse:number;
-  erdstrasseAnzahl:number;
   timer = setInterval(() => {
     this.interval();
   }, 1000);
@@ -40,9 +38,7 @@ export class Test2Component implements OnInit {
     this.mitarbeiterGesamt = 0;
     this.mitarbeiter = 5;
     this.preis_zelt=200;
-    
     this.preis_erdstrasse=500;
-    this.erdstrasseAnzahl=0;
     this.percentageErdstrasse=5;
 
   }
@@ -200,9 +196,9 @@ export class Test2Component implements OnInit {
 
   erdstrasse() { //5 kps%
     if(this.counter>=this.preis_erdstrasse) {
-    this.funktion_kaufen2(this.preis_erdstrasse,this.erdstrasseAnzahl)
+    this.funktion_kaufen2(this.preis_erdstrasse,this.data.infrastruktur.erdstrasseanzahl);
     this.preis_erdstrasse = Math.round(this.item[1]);
-    this.erdstrasseAnzahl = this.item[2];
+    this.data.infrastruktur.erdstrasseanzahl = this.item[2];
     this.percentage(this.counter,this.percentageErdstrasse);
     
     } else {

@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Arbeitstellen } from '../counter/Arbeitstellen';
 import { Model } from '../counter/model';
 import { Wohnraum } from '../counter/Wohnraum';
+import { Infrastruktur } from '../counter/Infrastruktur';
 
 @Injectable()
 export class DataService {
   items: Model[] = [];
   private arbeit : Arbeitstellen;
   private wohn : Wohnraum;
+  private infra: Infrastruktur;
   constructor() {
     this.arbeit = { "feldanzahl": 0,
       "fischeranzahl": 0, "holzfaeller" : 0, "mine" : 0, "oel" : 0 
@@ -19,6 +21,15 @@ export class DataService {
       "einfamilienhausanzahl":0,
       "mehrfamilienhausanzahl":0
     }
+    this.infra = {
+      "erdstrasseanzahl": 0,
+      "wasseranzahl":0,
+      "stromanzahl":0,
+      "strasseanzahl":0,
+      "technikanzahl":0
+    }
+
+    
   }
 
  get arbeitstellen(){
@@ -27,5 +38,9 @@ export class DataService {
 
  get wohnraum() {
    return this.wohn;
+ }
+
+ get infrastruktur() {
+   return this.infra;
  }
 }
