@@ -201,6 +201,7 @@ export class Test2Component implements OnInit {
     this.preis_erdstrasse = Math.round(this.item[1]);
     this.data.infrastruktur.erdstrasseanzahl = this.item[2];
     this.percentage(this.counter,this.percentageErdstrasse);
+    this.addtocount();
     
     } else {
       alert("Kein Geld leider")
