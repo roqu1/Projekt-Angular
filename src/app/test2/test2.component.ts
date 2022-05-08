@@ -28,7 +28,7 @@ export class Test2Component implements OnInit {
   }, 1000);
 
   constructor(public data : DataService) {
-    this.counter = 55555; // von Datastorage setzen
+    this.counter = 9999955555; // von Datastorage setzen
     this.preis_feld = 25;
     this.addcounter = 0; // null am anfang wichtig
     this.preis_fisch = 15;
@@ -36,7 +36,7 @@ export class Test2Component implements OnInit {
     this.addtocounts;
     this.timer;
     this.mitarbeiterGesamt = 0;
-    this.mitarbeiter = 5;
+    this.mitarbeiter = 99995;
     this.preis_zelt=200;
     this.preis_erdstrasse=500;
     this.percentageErdstrasse=5;
@@ -57,6 +57,7 @@ export class Test2Component implements OnInit {
 
   addtocount() {
     this.addcounter = this.data.arbeitstellen.feldanzahl * 2 + this.data.arbeitstellen.fischeranzahl  * 1; //jedes mal neu hinzufügen wenn es gibt
+    this.addcounter += this.data.infrastruktur.erdstrasseanzahl*((this.addcounter/100)*this.percentageErdstrasse);
     this.update();
   }
 

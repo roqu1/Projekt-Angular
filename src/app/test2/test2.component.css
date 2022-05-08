@@ -12,10 +12,7 @@
 }
 
 
-.leftcookie {
-  width: 32vw;
-  background-color: #00aa00;
-}
+
 
 .middlecookie {
   width: 38vw;
@@ -29,6 +26,9 @@
   background-color: #0000aa;
 }
 
+.tabs > label:hover {
+  outline: 1.5px solid #00aaaa;
+}
 
 .tip_container {
   position: relative;
