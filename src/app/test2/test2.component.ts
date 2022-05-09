@@ -31,9 +31,13 @@ export class Test2Component implements OnInit {
   preis_mehrfamilienhaus:number;
 // Infrastruktur
   preis_erdstrasse:number;
+  updateCounter = setInterval(() => {
+    this.counterToString();
+  }, 100);
   timer = setInterval(() => {
     this.interval();
   }, 1000);
+  
 
   constructor(public data : DataService) {
     this.addcounter = 0; // null am anfang wichtig
@@ -118,7 +122,7 @@ export class Test2Component implements OnInit {
           if (this.data.click.counter >= preis) {
             this.kaufen(preis);
             this.item[2] = anzahl += 1;
-            preis = preis *= 1.55505;
+            preis = preis *= 1.05;
             this.item[1] = preis;
             return this.item;
           } else {
@@ -299,6 +303,23 @@ export class Test2Component implements OnInit {
       text:'Um Mitarbeiter zu bekommen, brauchen Sie etwas in Wohnraum zu kaufen',
       timer:3000
     })}
+
+    counterToString() { 
+      this.data.click.counterStr = ''+this.data.click.counter;
+      if (this.data.click.counter<1000){
+        return this.data.click.counterStr;
+      } else if (this.data.click.counter<=999999) {
+        this.data.click.counterStr= this.data.click.counterStr.slice(0,-3)+'k'
+      } else  if (this.data.click.counter<=999999999) {
+        this.data.click.counterStr= this.data.click.counterStr.slice(0,-3)+'k'
+      } else {
+        Swal.fire ({
+          title:'Fehler passiert',
+          text:'Aktualisieren Sie die Seite wieder neu!',
+          confirmButtonText: '#'
+        })
+      }
+    }
 
   ngOnInit() {}
 }
