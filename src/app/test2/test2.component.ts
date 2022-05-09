@@ -198,7 +198,7 @@ export class Test2Component implements OnInit {
   }
   bungalow() {
     if(this.data.click.counter>=this.preis_bungalow) {
-    this.funktion_kaufen2(this.preis_zelt,this.data.wohnraum.bungalowanzahl);
+    this.funktion_kaufen2(this.preis_bungalow,this.data.wohnraum.bungalowanzahl);
     this.preis_bungalow = Math.round(this.item[1]);
     this.data.wohnraum.bungalowanzahl = this.item[2];
     this.mitarbeiter +=4;
