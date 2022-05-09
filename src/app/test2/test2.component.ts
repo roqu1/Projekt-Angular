@@ -80,55 +80,52 @@ export class Test2Component implements OnInit {
   }
 
   funktion_kaufen(preis, anzahl) {
+    
     if (this.data.click.counter <= 0) {
-      alert('Kein Geld');
+      this.nomoney();
     } else {
       if (anzahl == 0) {
         if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          console.log('gekauft');
           Math.round((preis *= 1.35));
           this.item[1] = preis;
           return this.item;
         } else {
-          alert('Kein Geld');
+          this.nomoney();
         }
       } else if (anzahl >0 && anzahl <=4) {
         if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          console.log('Mehr gekauft');
           preis = preis *= 1.20;
           this.item[1] = preis;
           return this.item;
         } else {
-          alert('Kein Geld');
+          this.nomoney();
         }
       } else if (anzahl >4 && anzahl <=8){ 
         if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          console.log('Mehr gekauft');
           preis = preis *= 1.10;
           this.item[1] = preis;
           return this.item;
         } else {
-          alert('Kein Geld');
+          this.nomoney();
         } 
       } else if (anzahl >8){ 
           if (this.data.click.counter >= preis) {
             this.kaufen(preis);
             this.item[2] = anzahl += 1;
-            console.log('Mehr gekauft');
             preis = preis *= 1.55505;
             this.item[1] = preis;
             return this.item;
           } else {
-            ('Kein Geld');
+            this.nomoney();
           }
     }else {
-        alert('Es gibt ein Fehler');
+      this.fehler();
       }
     }
   }
@@ -146,7 +143,7 @@ export class Test2Component implements OnInit {
       let text = this.data.arbeitstellen.feldanzahl.toString();
     document.getElementById(text+"feld").style.visibility = "visible";
     } else {
-      alert("Keine freie Mitarbeiter");
+      this.noworkers();
     }
   }
 
@@ -164,10 +161,10 @@ export class Test2Component implements OnInit {
     document.getElementById(text+"fisch").style.visibility = "visible";
   
   } else {
-    alert("Keine freie Mitarbeiter");
+    this.noworkers();
   } 
 } else {
-    alert("Kein Geld Leider")
+    this.nomoney();
   }
 }
 
@@ -214,7 +211,7 @@ export class Test2Component implements OnInit {
     this.data.wohnraum.zeltanzahl = this.item[2];
     this.mitarbeiter +=2;
     } else {
-      alert("Kein Geld leider")
+      this.nomoney();
     }
   }
   bungalow() {
@@ -224,7 +221,7 @@ export class Test2Component implements OnInit {
     this.data.wohnraum.bungalowanzahl = this.item[2];
     this.mitarbeiter +=4;
     } else {
-      alert("Kein Geld leider")
+      this.nomoney();
     }
   }
   haus() {
@@ -234,7 +231,7 @@ export class Test2Component implements OnInit {
     this.data.wohnraum.hausanzahl = this.item[2];
     this.mitarbeiter +=6;
     } else {
-      alert("Kein Geld leider")
+      this.nomoney();
     }
   }
   einfamilienhaus() {
@@ -244,7 +241,7 @@ export class Test2Component implements OnInit {
     this.data.wohnraum.einfamilienhausanzahl = this.item[2];
     this.mitarbeiter +=12;
     } else {
-      alert("Kein Geld leider")
+      this.nomoney();
     }
   }
   mehrfamilienhaus() {
@@ -254,7 +251,7 @@ export class Test2Component implements OnInit {
     this.data.wohnraum.mehrfamilienhausanzahl = this.item[2];
     this.mitarbeiter +=30;
     } else {
-      alert("Kein Geld leider")
+      this.nomoney();
     }
   }
 
@@ -272,11 +269,36 @@ export class Test2Component implements OnInit {
     this.addtocount();
     
     } else {
-      alert("Kein Geld leider")
+      this.nomoney();
     }
   }
 
 
+
+  nomoney(){
+    Swal.fire({
+      icon:'warning',
+      title: 'Hat nicht funktioniert',
+      text: 'Du hast ja kein Geld!',
+      confirmButtonText: 'Okay :('
+})
+  }
+
+  fehler(){
+    Swal.fire({
+      icon:'error',
+      title: 'Fehler',
+      text: 'Laden Sie die Seite wieder neu oder wenden Sie sich an der Administrator',
+      confirmButtonText: 'Okay x('
+})
+  }
+  noworkers(){
+    Swal.fire({
+      icon:'info',
+      title:'Keine Mitarbeiter',
+      text:'Um Mitarbeiter zu bekommen, brauchen Sie etwas in Wohnraum zu kaufen',
+      timer:3000
+    })}
 
   ngOnInit() {}
 }
