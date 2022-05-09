@@ -3,6 +3,7 @@ import { Arbeitstellen } from '../counter/Arbeitstellen';
 import { Model } from '../counter/model';
 import { Wohnraum } from '../counter/Wohnraum';
 import { Infrastruktur } from '../counter/Infrastruktur';
+import { ClickerModule } from '../counter/clicker.module';
 
 @Injectable()
 export class DataService {
@@ -10,7 +11,12 @@ export class DataService {
   private arbeit : Arbeitstellen;
   private wohn : Wohnraum;
   private infra: Infrastruktur;
+  private clicker: ClickerModule;
   constructor() {
+    this.clicker = {
+      "counter":9999995
+    }
+
     this.arbeit = { "feldanzahl": 0,
       "fischeranzahl": 0, "holzfaeller" : 0, "mine" : 0, "oel" : 0 
     }
@@ -31,6 +37,10 @@ export class DataService {
 
     
   }
+
+ get click() {
+   return this.clicker;
+ }
 
  get arbeitstellen(){
    return this.arbeit

@@ -9,8 +9,7 @@ import { DataService } from '../dataservice/data.service';
   styleUrls: ['./test2.component.css'],
 })
 export class Test2Component implements OnInit {
-  counter: number;
- 
+
   addcounter: number;
   
   item: number[] = [];
@@ -35,10 +34,7 @@ export class Test2Component implements OnInit {
   }, 1000);
 
   constructor(public data : DataService) {
-    this.counter = 9999955555; // DATASERVICE!!!!!!!
-   
     this.addcounter = 0; // null am anfang wichtig
-   
     this.item;
     this.timer;
     this.mitarbeiterGesamt = 0;
@@ -63,11 +59,11 @@ export class Test2Component implements OnInit {
   }
 
   interval() {
-    this.counter += (this.addcounter/100)*100;
+    this.data.click.counter += (this.addcounter/100)*100;
   }
 
   kaufen(preis: number) {
-    this.counter -= Math.round(preis);
+    this.data.click.counter -= Math.round(preis);
   }
 
   addtocount() {//jedes mal neu hinzufügen wenn es gibt
@@ -82,12 +78,12 @@ export class Test2Component implements OnInit {
   }
 
   funktion_kaufen(preis, anzahl) {
-    if (this.counter <= 0) {
+    if (this.data.click.counter <= 0) {
       alert('Kein Geld');
     } else {
       if (anzahl == 0) {
         // preis; // default in die hauptmethode einsetzen
-        if (this.counter >= preis) {
+        if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
           // this.update();
@@ -99,7 +95,7 @@ export class Test2Component implements OnInit {
           alert('Kein Geld');
         }
       } else if (anzahl > 0) {
-        if (this.counter >= preis) {
+        if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
           //this.update(); // macht das gleiche wie addcounter
@@ -134,7 +130,7 @@ export class Test2Component implements OnInit {
   }
 
   fischer() {
-    if(this.counter>this.preis_fisch) {
+    if(this.data.click.counter>this.preis_fisch) {
     if(this.mitarbeiter>=2){
     this.funktion_kaufen(this.preis_fisch, this.data.arbeitstellen.fischeranzahl);
     this.preis_fisch = Math.round(this.item[1]);
@@ -158,12 +154,12 @@ export class Test2Component implements OnInit {
 
   // funktion_kaufen2 kaufen
   funktion_kaufen2(preis, anzahl) {
-    if (this.counter <= 0) {
+    if (this.data.click.counter <= 0) {
       alert('Kein Geld');
     } else {
       if (anzahl == 0) {
         // preis; // default in die hauptmethode einsetzen
-        if (this.counter >= preis) {
+        if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
           Math.round((preis *= 1.2));
@@ -173,7 +169,7 @@ export class Test2Component implements OnInit {
           alert('Kein Geld');
         }
       } else if (anzahl > 0) {
-        if (this.counter >= preis) {
+        if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
           preis = preis *= 1.2;
@@ -191,7 +187,7 @@ export class Test2Component implements OnInit {
   
   //Wohnraum
   zelt() {
-    if(this.counter>=this.preis_zelt) {
+    if(this.data.click.counter>=this.preis_zelt) {
     this.funktion_kaufen2(this.preis_zelt,this.data.wohnraum.zeltanzahl);
     this.preis_zelt = Math.round(this.item[1]);
     this.data.wohnraum.zeltanzahl = this.item[2];
@@ -201,7 +197,7 @@ export class Test2Component implements OnInit {
     }
   }
   bungalow() {
-    if(this.counter>=this.preis_bungalow) {
+    if(this.data.click.counter>=this.preis_bungalow) {
     this.funktion_kaufen2(this.preis_zelt,this.data.wohnraum.bungalowanzahl);
     this.preis_bungalow = Math.round(this.item[1]);
     this.data.wohnraum.bungalowanzahl = this.item[2];
@@ -211,7 +207,7 @@ export class Test2Component implements OnInit {
     }
   }
   haus() {
-    if(this.counter>=this.preis_haus) {
+    if(this.data.click.counter>=this.preis_haus) {
     this.funktion_kaufen2(this.preis_haus,this.data.wohnraum.hausanzahl);
     this.preis_haus = Math.round(this.item[1]);
     this.data.wohnraum.hausanzahl = this.item[2];
@@ -221,7 +217,7 @@ export class Test2Component implements OnInit {
     }
   }
   einfamilienhaus() {
-    if(this.counter>=this.preis_einfamilienhaus) {
+    if(this.data.click.counter>=this.preis_einfamilienhaus) {
     this.funktion_kaufen2(this.preis_einfamilienhaus,this.data.wohnraum.einfamilienhausanzahl);
     this.preis_einfamilienhaus = Math.round(this.item[1]);
     this.data.wohnraum.einfamilienhausanzahl = this.item[2];
@@ -231,7 +227,7 @@ export class Test2Component implements OnInit {
     }
   }
   mehrfamilienhaus() {
-    if(this.counter>=this.preis_mehrfamilienhaus) {
+    if(this.data.click.counter>=this.preis_mehrfamilienhaus) {
     this.funktion_kaufen2(this.preis_mehrfamilienhaus,this.data.wohnraum.mehrfamilienhausanzahl);
     this.preis_mehrfamilienhaus = Math.round(this.item[1]);
     this.data.wohnraum.mehrfamilienhausanzahl = this.item[2];
@@ -248,7 +244,7 @@ export class Test2Component implements OnInit {
 
 
   erdstrasse() { //5 kps%
-    if(this.counter>=this.preis_erdstrasse) {
+    if(this.data.click.counter>=this.preis_erdstrasse) {
     this.funktion_kaufen2(this.preis_erdstrasse,this.data.infrastruktur.erdstrasseanzahl);
     this.preis_erdstrasse = Math.round(this.item[1]);
     this.data.infrastruktur.erdstrasseanzahl = this.item[2];
