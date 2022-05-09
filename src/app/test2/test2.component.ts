@@ -315,8 +315,7 @@ export class Test2Component implements OnInit {
       } else {
         Swal.fire ({
           title:'Fehler passiert',
-          text:'Aktualisieren Sie die Seite wieder neu!',
-          confirmButtonText: '#'
+          text:'Aktualisieren Sie die Seite wieder neu!'
         })
       }
     }
