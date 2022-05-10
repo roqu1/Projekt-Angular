@@ -4,6 +4,6 @@ p {
 .grid-container {
   float: left;
   display: grid;
-  grid-template-columns:  auto auto;
-  width: 100vw;
+  grid-template-columns: auto auto auto;
+  width: 100;
 }
