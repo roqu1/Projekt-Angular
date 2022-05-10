@@ -24,6 +24,9 @@ export class Test2Component implements OnInit {
 // Arbeitstellen
   preis_fisch: number;
   preis_feld: number;
+  preis_holzfaeller:number;
+  preis_mine:number;
+  preis_oel:number;
 // Wohnraum
   preis_zelt:number;
   preis_bungalow:number;
@@ -45,13 +48,16 @@ export class Test2Component implements OnInit {
     this.item;
     this.timer;
     // Mitarbeiter P.S die Reihenfolge ist richtig
-    this.mitarbeiter = 99995;
+    this.mitarbeiter = 0;
     this.mitarbeiterGesamt = 0;
     this.mitarbeiterGesamtStr=''+this.mitarbeiterGesamt;
     this.mitarbeiterStr=''+this.mitarbeiter;
     // Arbeitstellen
-    this.preis_feld = 25;
-    this.preis_fisch = 15;
+    this.preis_feld = 400;
+    this.preis_fisch = 200;
+    this.preis_holzfaeller=600;
+    this.preis_mine=1000;
+    this.preis_oel=2500;
     // Wohnraum
     this.preis_zelt=200;
     this.preis_bungalow=300;
@@ -61,7 +67,6 @@ export class Test2Component implements OnInit {
     // Infrastruktur
     this.preis_erdstrasse=500;
     this.percentageErdstrasse=5;
-
   }
 
   update() {
@@ -78,10 +83,11 @@ export class Test2Component implements OnInit {
 
   addtocount() {//jedes mal neu hinzufügen wenn es gibt
     //Arbeitstellen
+    this.addcounter += this.data.arbeitstellen.fischeranzahl  * 1;
     this.addcounter = this.data.arbeitstellen.feldanzahl * 2;
-    this.addcounter += this.data.arbeitstellen.fischeranzahl  * 1; 
-    //Wohnraum
-
+    this.addcounter = this.data.arbeitstellen.feldanzahl * 5;
+    this.addcounter = this.data.arbeitstellen.feldanzahl * 15;
+    this.addcounter = this.data.arbeitstellen.feldanzahl * 30;
     //Infrastruktur
     this.addcounter += Math.round(this.data.infrastruktur.erdstrasseanzahl*((this.addcounter/100)*this.percentageErdstrasse));
     console.log(this.addcounter);
@@ -146,23 +152,7 @@ export class Test2Component implements OnInit {
     this.mitarbeiterStr=this.mitarbeiterStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
   // Arbeitstellen
-  feld() {
-    if(this.mitarbeiter>=5){
-    this.funktion_kaufen(this.preis_feld, this.data.arbeitstellen.feldanzahl);
-    this.preis_feld = Math.round(this.item[1]);
-    this.data.arbeitstellen.feldanzahl = this.item[2];
-   
-    this.addtocount();
-    this.mitarbeiterGesamt+=5;
-    this.mitarbeiter-=5;
-    this.mitarbeiter_funktion(this.mitarbeiterGesamt,this.mitarbeiter);
-      
-    let text = this.data.arbeitstellen.feldanzahl.toString();
-    document.getElementById(text+"feld").style.visibility = "visible";
-    } else {
-      this.noworkers();
-    }
-  }
+  
 
   fischer() {
     if(this.data.click.counter>this.preis_fisch) {
@@ -182,6 +172,93 @@ export class Test2Component implements OnInit {
     this.noworkers();
   } 
 } else {
+    this.nomoney();
+  }
+}
+feld() {
+  if(this.data.click.counter>this.preis_feld) {
+  if(this.mitarbeiter>=5){
+  this.funktion_kaufen(this.preis_feld, this.data.arbeitstellen.feldanzahl);
+  this.preis_feld = Math.round(this.item[1]);
+  this.data.arbeitstellen.feldanzahl = this.item[2];
+ 
+  this.addtocount();
+  this.mitarbeiterGesamt+=5;
+  this.mitarbeiter-=5;
+  this.mitarbeiter_funktion(this.mitarbeiterGesamt,this.mitarbeiter);
+    
+  let text = this.data.arbeitstellen.feldanzahl.toString();
+  document.getElementById(text+"feld").style.visibility = "visible";
+  } else {
+    this.noworkers();
+  }
+ } else {
+    this.nomoney();
+  }
+}
+
+holzfaeller() {
+  if(this.data.click.counter>this.preis_holzfaeller) {
+  if(this.mitarbeiter>=5){
+  this.funktion_kaufen(this.preis_holzfaeller, this.data.arbeitstellen.holzfaeller);
+  this.preis_feld = Math.round(this.item[1]);
+  this.data.arbeitstellen.holzfaeller = this.item[2];
+ 
+  this.addtocount();
+  this.mitarbeiterGesamt+=10;
+  this.mitarbeiter-=10;
+  this.mitarbeiter_funktion(this.mitarbeiterGesamt,this.mitarbeiter);
+    
+  let text = this.data.arbeitstellen.holzfaeller.toString();
+  document.getElementById(text+"holzfaeller").style.visibility = "visible";
+  } else {
+    this.noworkers();
+  }
+ } else {
+    this.nomoney();
+  }
+}
+
+mine() {
+  if(this.data.click.counter>this.preis_mine) {
+  if(this.mitarbeiter>=5){
+  this.funktion_kaufen(this.preis_mine, this.data.arbeitstellen.mine);
+  this.preis_mine = Math.round(this.item[1]);
+  this.data.arbeitstellen.mine = this.item[2];
+ 
+  this.addtocount();
+  this.mitarbeiterGesamt+=50;
+  this.mitarbeiter-=50;
+  this.mitarbeiter_funktion(this.mitarbeiterGesamt,this.mitarbeiter);
+    
+  let text = this.data.arbeitstellen.mine.toString();
+  document.getElementById(text+"mine").style.visibility = "visible";
+  } else {
+    this.noworkers();
+  }
+ } else {
+    this.nomoney();
+  }
+}
+
+oel() {
+  if(this.data.click.counter>this.preis_oel) {
+  if(this.mitarbeiter>=5){
+  this.funktion_kaufen(this.preis_oel, this.data.arbeitstellen.oel);
+  this.preis_oel = Math.round(this.item[1]);
+  this.data.arbeitstellen.oel = this.item[2];
+ 
+  this.addtocount();
+  this.mitarbeiterGesamt+=70;
+  this.mitarbeiter-=70;
+  this.mitarbeiter_funktion(this.mitarbeiterGesamt,this.mitarbeiter);
+    
+  let text = this.data.arbeitstellen.oel.toString();
+  document.getElementById(text+"oel").style.visibility = "visible";
+  } else {
+    this.noworkers();
+  }
+ } else {
     this.nomoney();
   }
 }
