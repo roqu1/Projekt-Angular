@@ -14,12 +14,15 @@ export class DataService {
   private clicker: ClickerModule;
   constructor() {
     this.clicker = {
-      "counter":1100500,
+      "counter":1000000000,
       "counterStr":"0"
     }
 
     this.arbeit = { "feldanzahl": 0,
-      "fischeranzahl": 0, "holzfaeller" : 0, "mine" : 0, "oel" : 0 
+      "fischeranzahl": 0,
+      "holzfaeller" : 0, 
+      "mine" : 0, 
+      "oel" : 0 
     }
     this.wohn = {
       "zeltanzahl": 0,

@@ -13,12 +13,13 @@ import Swal from 'sweetalert2'
 export class Test2Component implements OnInit {
 
   addcounter: number;
-  
   item: number[] = [];
   percentages:number[] = [];
   percentageErdstrasse:number;
   count: number[];
+  mitarbeiterGesamtStr:String;
   mitarbeiterGesamt: number;
+  mitarbeiterStr:String;
   mitarbeiter: number;
 // Arbeitstellen
   preis_fisch: number;
@@ -43,8 +44,11 @@ export class Test2Component implements OnInit {
     this.addcounter = 0; // null am anfang wichtig
     this.item;
     this.timer;
-    this.mitarbeiterGesamt = 0;
+    // Mitarbeiter P.S die Reihenfolge ist richtig
     this.mitarbeiter = 99995;
+    this.mitarbeiterGesamt = 0;
+    this.mitarbeiterGesamtStr=''+this.mitarbeiterGesamt;
+    this.mitarbeiterStr=''+this.mitarbeiter;
     // Arbeitstellen
     this.preis_feld = 25;
     this.preis_fisch = 15;
@@ -73,11 +77,12 @@ export class Test2Component implements OnInit {
   }
 
   addtocount() {//jedes mal neu hinzufügen wenn es gibt
+    //Arbeitstellen
     this.addcounter = this.data.arbeitstellen.feldanzahl * 2;
     this.addcounter += this.data.arbeitstellen.fischeranzahl  * 1; 
+    //Wohnraum
 
-
-
+    //Infrastruktur
     this.addcounter += Math.round(this.data.infrastruktur.erdstrasseanzahl*((this.addcounter/100)*this.percentageErdstrasse));
     console.log(this.addcounter);
     this.update();
@@ -133,6 +138,13 @@ export class Test2Component implements OnInit {
       }
     }
   }
+
+  mitarbeiter_funktion (gesamt,aktuell) {
+    this.mitarbeiterGesamtStr=''+gesamt
+    this.mitarbeiterStr = ''+aktuell
+    this.mitarbeiterGesamtStr=this.mitarbeiterGesamtStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    this.mitarbeiterStr=this.mitarbeiterStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
   // Arbeitstellen
   feld() {
     if(this.mitarbeiter>=5){
@@ -143,6 +155,7 @@ export class Test2Component implements OnInit {
     this.addtocount();
     this.mitarbeiterGesamt+=5;
     this.mitarbeiter-=5;
+    this.mitarbeiter_funktion(this.mitarbeiterGesamt,this.mitarbeiter);
       
     let text = this.data.arbeitstellen.feldanzahl.toString();
     document.getElementById(text+"feld").style.visibility = "visible";
@@ -160,6 +173,7 @@ export class Test2Component implements OnInit {
     this.addtocount();
     this.mitarbeiterGesamt+=2;
     this.mitarbeiter-=2
+    this.mitarbeiter_funktion(this.mitarbeiterGesamt,this.mitarbeiter);
       
     let text = this.data.arbeitstellen.fischeranzahl.toString();
     document.getElementById(text+"fisch").style.visibility = "visible";
@@ -306,12 +320,17 @@ export class Test2Component implements OnInit {
 
     counterToString() { 
       this.data.click.counterStr = ''+this.data.click.counter;
+      
+        this.data.click.counterStr= this.data.click.counterStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        
       if (this.data.click.counter<1000){
         return this.data.click.counterStr;
       } else if (this.data.click.counter<=999999) {
         this.data.click.counterStr= this.data.click.counterStr.slice(0,-3)+'k'
       } else  if (this.data.click.counter<=999999999) {
         this.data.click.counterStr= this.data.click.counterStr.slice(0,-3)+'k'
+      } else  if (this.data.click.counter<=999999999999) {
+        this.data.click.counterStr= this.data.click.counterStr.slice(0,-6)+'kk'
       } else {
         Swal.fire ({
           title:'Fehler passiert',
