@@ -14,7 +14,7 @@ export class DataService {
   private clicker: ClickerModule;
   constructor() {
     this.clicker = {
-      "counter":50,
+      "counter":1001150300,
       "counterStr":"0"
     }
 

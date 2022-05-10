@@ -403,9 +403,9 @@ oel() {
       if (this.data.click.counter<1000){
         return this.data.click.counterStr;
       } else if (this.data.click.counter<=999999) {
-        this.data.click.counterStr= this.data.click.counterStr.slice(0,-3)+'k'
+        this.data.click.counterStr= this.data.click.counterStr.slice(0,-2)+'k'
       } else  if (this.data.click.counter<=999999999) {
-        this.data.click.counterStr= this.data.click.counterStr.slice(0,-3)+'k'
+        this.data.click.counterStr= this.data.click.counterStr.slice(0,-4)+'k'
       } else  if (this.data.click.counter<=999999999999) {
         this.data.click.counterStr= this.data.click.counterStr.slice(0,-6)+'kk'
       } else {
