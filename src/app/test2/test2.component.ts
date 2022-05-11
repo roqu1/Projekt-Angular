@@ -83,11 +83,11 @@ export class Test2Component implements OnInit {
 
   addtocount() {//jedes mal neu hinzufügen wenn es gibt
     //Arbeitstellen
-    this.addcounter += this.data.arbeitstellen.fischeranzahl  * 1;
-    this.addcounter = this.data.arbeitstellen.feldanzahl * 2;
-    this.addcounter = this.data.arbeitstellen.feldanzahl * 5;
-    this.addcounter = this.data.arbeitstellen.feldanzahl * 15;
-    this.addcounter = this.data.arbeitstellen.feldanzahl * 30;
+    this.addcounter = this.data.arbeitstellen.fischeranzahl  * 1;
+    this.addcounter += this.data.arbeitstellen.feldanzahl * 2;
+    this.addcounter += this.data.arbeitstellen.holzfaeller * 5;
+    this.addcounter += this.data.arbeitstellen.mine * 15;
+    this.addcounter += this.data.arbeitstellen.oel * 30;
     //Infrastruktur
     this.addcounter += Math.round(this.data.infrastruktur.erdstrasseanzahl*((this.addcounter/100)*this.percentageErdstrasse));
     console.log(this.addcounter);
