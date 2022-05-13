@@ -42,9 +42,13 @@ export class Test2Component implements OnInit {
   percentagestrasse: number;
   preis_technik:number;
   percentagetechnik: number;
+  
+  //buttons
+  
   //Update Zeitlich
   updateCounter = setInterval(() => {
     this.counterToString();
+    this.disableButton();
   }, 100);
   timer = setInterval(() => {
     this.interval();
@@ -54,6 +58,7 @@ export class Test2Component implements OnInit {
     this.addcounter = 0; // null am anfang wichtig
     this.item;
     this.timer;
+    let fischbtn = <HTMLButtonElement> document.getElementById('fisch');
     // Mitarbeiter P.S die Reihenfolge ist richtig
     this.mitarbeiter = 0;
     this.mitarbeiterGesamt = 0;
@@ -486,7 +491,7 @@ export class Test2Component implements OnInit {
     });
   }
 
-  public counterToString() {
+   counterToString() {
     this.data.click.counterStr = '' + this.data.click.counter;
 
     this.data.click.counterStr = this.data.click.counterStr
@@ -509,6 +514,14 @@ export class Test2Component implements OnInit {
         title: 'Fehler passiert',
         text: 'Aktualisieren Sie die Seite wieder neu!',
       });
+    }
+  }
+
+  disableButton() {
+    if (this.data.click.counter<this.preis_fisch) {
+      (document.getElementById('fisch') as HTMLInputElement).disabled = true;
+    } else {
+      (document.getElementById('fisch') as HTMLInputElement).disabled = false;
     }
   }
 
