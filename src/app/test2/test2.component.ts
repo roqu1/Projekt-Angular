@@ -3,6 +3,7 @@ import { ClickerModule } from '../counter/clicker.module';
 import { Arbeitstellen } from '../counter/Arbeitstellen';
 import { DataService } from '../dataservice/data.service';
 import Swal from 'sweetalert2';
+import { transformAll } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-test2',
@@ -47,6 +48,7 @@ export class Test2Component implements OnInit {
   //Update Zeitlich
   updateCounter = setInterval(() => {
     this.counterToString();
+    this.disableButton();
     
   }, 100);
   timer = setInterval(() => {
@@ -85,6 +87,7 @@ export class Test2Component implements OnInit {
     this.percentagestrasse=50;
     this.preis_technik = 3000;
     this.percentagetechnik = 100;
+    
   }
 
   update() {
@@ -517,11 +520,49 @@ export class Test2Component implements OnInit {
   }
 
   disableButton() {
-    const fischbtn = (document.getElementById('fisch') as HTMLInputElement)
-    if (this.data.click.counter<this.preis_fisch) {
-      fischbtn.disabled = true;
-    } else if (this.data.click.counter>=this.preis_fisch){
-      fischbtn.disabled = false;
+    const fischbtn = (document.getElementById('fisch') as HTMLInputElement);
+    const feldbtn = (document.getElementById('feld') as HTMLInputElement);
+    const holzfaeller = (document.getElementById('holzfaeller') as HTMLInputElement);
+    const mine = (document.getElementById('mine') as HTMLInputElement);
+    const oel = (document.getElementById('oel') as HTMLInputElement);
+    const erdstrasse = (document.getElementById('erdstrasse') as HTMLInputElement);
+    const wasser = (document.getElementById('wasser') as HTMLInputElement);
+    const strom = (document.getElementById('strom') as HTMLInputElement);
+    const strasse = (document.getElementById('strasse') as HTMLInputElement);
+    const technik = (document.getElementById('technik') as HTMLInputElement);
+    const zelt = (document.getElementById('zelt') as HTMLInputElement);
+    const bungalow = (document.getElementById('bungalow') as HTMLInputElement);
+    const haus = (document.getElementById('haus') as HTMLInputElement);
+    const einfamilienhaus = (document.getElementById('einfamilienhaus') as HTMLInputElement);
+    const mehrfamilienhaus = (document.getElementById('mehrfamilienhaus') as HTMLInputElement);
+
+    
+    
+    this.funktion_button(fischbtn,this.preis_fisch);
+    this.funktion_button(feldbtn,this.preis_feld);
+    this.funktion_button(holzfaeller,this.preis_holzfaeller);
+    this.funktion_button(mine,this.preis_mine);
+    this.funktion_button(oel,this.preis_oel);
+    this.funktion_button(erdstrasse,this.preis_erdstrasse);
+    this.funktion_button(wasser,this.preis_wasser);
+    this.funktion_button(strom,this.preis_strom);
+    this.funktion_button(strasse,this.preis_strasse);
+    this.funktion_button(technik,this.preis_technik);
+    this.funktion_button(zelt,this.preis_zelt);
+    this.funktion_button(bungalow,this.preis_bungalow);
+    this.funktion_button(haus,this.preis_haus);
+    this.funktion_button(einfamilienhaus,this.preis_einfamilienhaus);
+    this.funktion_button(mehrfamilienhaus,this.preis_mehrfamilienhaus);
+
+  }
+
+  funktion_button(btnname,preisbtn) {
+    if(this.data.click.counter<preisbtn) {
+      btnname.disabled = true;
+      btnname.style.transform = "translateY(0px)"
+      btnname.style.boxShadow = "0 4px #999";
+    } else if (this.data.click.counter>=preisbtn){
+      btnname.disabled = false;
     }
   }
 

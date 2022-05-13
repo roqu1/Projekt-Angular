@@ -21,7 +21,7 @@
       <th class="black"> Preis: {{preis_zelt}}</th>
       </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="zelt()">
+          <button type="button" class="tabcontent" id="zelt" (click)="zelt()">
             <th class="black zelt">Zelt:     
               {{data.wohnraum.zeltanzahl}}</th>
           </button>
@@ -37,7 +37,7 @@
         <th class="black"> Preis: {{preis_bungalow}}</th>
         </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="bungalow()">
+          <button type="button" class="tabcontent" id="bungalow" (click)="bungalow()">
             <th class="black bungalow">Bungalow: {{data.wohnraum.bungalowanzahl}}</th>
           </button>
           <div class="tip_container">
@@ -51,7 +51,7 @@
         <th class="black"> Preis: {{preis_haus}}</th>
         </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="haus()">
+          <button type="button" class="tabcontent" id="haus" (click)="haus()">
             <th class="black haus">Haus: {{data.wohnraum.hausanzahl}}</th>
           </button>
           <div class="tip_container">
@@ -65,7 +65,7 @@
           <th class="black"> Preis: {{preis_einfamilienhaus}}</th>
           </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="einfamilienhaus()">
+          <button type="button" class="tabcontent" id="einfamilienhaus" (click)="einfamilienhaus()">
             <th class="black einfamilienhaus">Einfamilienhaus: {{data.wohnraum.einfamilienhausanzahl}}</th>
           </button>
 
@@ -80,7 +80,7 @@
           <th class="black"> P:{{preis_mehrfamilienhaus}}</th>
           </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="mehrfamilienhaus()">
+          <button type="button" class="tabcontent" id="mehrfamilienhaus" (click)="mehrfamilienhaus()">
             <th class="black mehrfamilienhaus">Mehrfamilienhaus: {{data.wohnraum.mehrfamilienhausanzahl}}</th>
           </button>
           <div class="tip_container">
@@ -115,7 +115,7 @@
         <th class="black" > Preis: {{preis_feld}}</th>
         </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="feld()" >
+          <button type="button" class="tabcontent" id="feld" (click)="feld()" >
             <th class="black feld">
               Feld: {{ data.arbeitstellen.feldanzahl }}
             </th>
@@ -131,7 +131,7 @@
         <th class="black" > Preis: {{preis_holzfaeller}}</th>
         </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="holzfaeller()">
+          <button type="button" class="tabcontent" id="holzfaeller" (click)="holzfaeller()">
             <th class="black holzfäller">Holzfäller: {{data.arbeitstellen.holzfaeller}}</th>
           </button>
           <div class="tip_container">
@@ -144,7 +144,7 @@
           <div class="upgrade-left">
           <th class="black" > Preis: {{preis_mine}}</th>
           </div>
-        <label class="tooltip"><button type="button" class="tabcontent" (click)="mine()">
+        <label class="tooltip"><button type="button" class="tabcontent" id="mine" (click)="mine()">
             <th class="black mine">Mine: {{data.arbeitstellen.mine}}</th>
           </button>
           <div class="tip_container">
@@ -157,7 +157,7 @@
           <div class="upgrade-left">
           <th class="black" > Preis: {{preis_oel}}</th>
           </div>
-        <label class="tooltip"><button type="button" class="tabcontent" (click)="oel()">
+        <label class="tooltip"><button type="button" class="tabcontent" id="oel" (click)="oel()">
             <th class="black öl">Öl: {{data.arbeitstellen.oel}}</th>
           </button>
           <div class="tip_container">
@@ -172,7 +172,7 @@
       <div class="upgrade-left">
       <th class="black" > P: {{preis_erdstrasse}}</th>
       </div>
-        <label class="tooltip"><button type="button" class="tabcontent" (click)="erdstrasse()">
+        <label class="tooltip"><button type="button" class="tabcontent" id="erdstrasse" (click)="erdstrasse()">
             <th class="black erdstrasse">Erdstrasse: {{data.infrastruktur.erdstrasseanzahl}}</th>
           </button>
           <div class="tip_container">
@@ -185,7 +185,7 @@
         <div class="upgrade-left">
         <th class="black" > P: {{preis_wasser}}</th>
         </div>
-        <label class="tooltip"><button type="button" class="tabcontent" (click)="wasser()">
+        <label class="tooltip"><button type="button" class="tabcontent" id="wasser" (click)="wasser()">
             <th class="black wasserversorgung">Wasserversorgung: {{data.infrastruktur.wasseranzahl}}</th>
           </button>
           <div class="tip_container">
@@ -200,7 +200,7 @@
         <th class="black" > P: {{preis_strom}}</th>
         </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="strom()">
+          <button type="button" class="tabcontent" id="strom" (click)="strom()">
             <th class="black strom">Strom: {{data.infrastruktur.stromanzahl}}</th>
           </button>
           <div class="tip_container">
@@ -212,7 +212,7 @@
           <div class="upgrade-left">
           <th class="black" > P: {{preis_strasse}}</th>
           </div>
-        <label class="tooltip"><button type="button" class="tabcontent" (click)="strasse()">
+        <label class="tooltip"><button type="button" class="tabcontent" id="strasse" (click)="strasse()">
             <th class="black straße">Straße: {{data.infrastruktur.strasseanzahl}}</th>
           </button>
           <div class="tip_container">
@@ -225,7 +225,7 @@
           <th class="black" > P: {{preis_technik}}</th>
           </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent" (click)="technik()">
+          <button type="button" class="tabcontent" id="technik" (click)="technik()">
             <th class="black WdT">Wunder der Technik: {{data.infrastruktur.technikanzahl}}</th>
           </button>
           <div class="tip_container">
