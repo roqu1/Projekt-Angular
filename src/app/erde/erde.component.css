@@ -37,9 +37,12 @@
 }
 
 .counter {
-  margin-top: 30%;
   color: rgb(255, 255, 255);
   font-family: Minecraftia;
+  top: 15%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .aliens {
@@ -53,11 +56,12 @@
 }
 
 #aaa {
-  transform: rotate(320deg) ;
+  transform: rotate(315deg);
   width: 140px;
   height: auto;
-  margin-top: 57%;
-  margin-left: -37%;
   position: absolute;
-  z-index:7;
+  z-index: 7;
+  top: 30%;
+  display: inline-block;
+  left: 10%;
 }

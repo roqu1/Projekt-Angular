@@ -8,14 +8,13 @@ import { DataService } from '../dataservice/data.service';
 })
 export class ErdeComponent implements OnInit {
 
-  cookiecounter: number;
   isintervallRunning: boolean = false;
 
   constructor(public data : DataService) {
   }
 
-  add(number: number) {
-    this.data.click.counter += number;
+  add() {
+    this.data.click.counter++;
   }
 
   ngOnInit() {
@@ -28,11 +27,9 @@ export class ErdeComponent implements OnInit {
   showAliens() {
     let aliens = document.getElementById('aliens');
     aliens.classList.remove('hidden');
-    console.log('Show Aliens');
 
     setTimeout(() => {
       aliens.classList.add('hidden');
-      console.log('Hide Aliens');
     }, 2820);
   }
 }
