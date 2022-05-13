@@ -66,7 +66,7 @@ export class Test2Component implements OnInit {
     this.preis_mehrfamilienhaus=3000;
     // Infrastruktur
     this.preis_erdstrasse=500;
-    this.percentageErdstrasse=5;
+    this.percentageErdstrasse=1.05; //oder das ist 5 und in addtcount: (this.addcounter/100)*this.percentageErdstrasse)
   }
 
   update() {
@@ -74,7 +74,7 @@ export class Test2Component implements OnInit {
   }
 
   interval() {
-    this.data.click.counter += (this.addcounter/100)*100;
+    this.data.click.counter += this.addcounter
   }
 
   kaufen(preis: number) {
@@ -89,7 +89,7 @@ export class Test2Component implements OnInit {
     this.addcounter += this.data.arbeitstellen.mine * 15;
     this.addcounter += this.data.arbeitstellen.oel * 30;
     //Infrastruktur
-    this.addcounter += Math.round(this.data.infrastruktur.erdstrasseanzahl*((this.addcounter/100)*this.percentageErdstrasse));
+    this.addcounter += Math.round(this.data.infrastruktur.erdstrasseanzahl*(this.addcounter*this.percentageErdstrasse));
     console.log(this.addcounter);
     this.update();
   }
