@@ -115,10 +115,7 @@
   box-shadow: 0 4px #999;
 }
 
-.tabcontent:hover {
-  /* Buttons in content */
-  background-color: rgb(239, 239, 239, 1);
-}
+
 
 .tabcontent:active {
   box-shadow: 0 5px #666;

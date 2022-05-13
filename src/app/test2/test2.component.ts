@@ -47,7 +47,7 @@ export class Test2Component implements OnInit {
   //Update Zeitlich
   updateCounter = setInterval(() => {
     this.counterToString();
-    this.disableButton();
+    
   }, 100);
   timer = setInterval(() => {
     this.interval();
@@ -114,6 +114,7 @@ export class Test2Component implements OnInit {
     this.addcounter += Math.round(this.data.infrastruktur.strasseanzahl *(this.addcounter / 100) * this.percentagestrasse);
     this.addcounter += Math.round(this.data.infrastruktur.technikanzahl *(this.addcounter / 100) * this.percentagetechnik);
     this.update();
+    this.disableButton();
   }
 
   funktion_kaufen(preis, anzahl) {
@@ -516,10 +517,11 @@ export class Test2Component implements OnInit {
   }
 
   disableButton() {
+    const fischbtn = (document.getElementById('fisch') as HTMLInputElement)
     if (this.data.click.counter<this.preis_fisch) {
-      (document.getElementById('fisch') as HTMLInputElement).disabled = true;
+      fischbtn.disabled = true;
     } else if (this.data.click.counter>=this.preis_fisch){
-      (document.getElementById('fisch') as HTMLInputElement).disabled = false;
+      fischbtn.disabled = false;
     }
   }
 
