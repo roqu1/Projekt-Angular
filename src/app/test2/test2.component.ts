@@ -395,7 +395,7 @@ oel() {
       timer:3000
     })}
 
-    counterToString() { 
+    public counterToString() { 
       this.data.click.counterStr = ''+this.data.click.counter;
       
         this.data.click.counterStr= this.data.click.counterStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

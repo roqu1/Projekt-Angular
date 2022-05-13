@@ -1,0 +1,63 @@
+.cookie_cont {
+  width: 500px;
+  height: 100vh;
+  display: inline-block;
+  background-image: url(https://media4.giphy.com/media/FlodpfQUBSp20/giphy.gif);
+  text-align: center;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.cookie {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 355px;
+  position: absolute;
+  height: 355px;
+  top: 50%;
+  transition: 0.1s;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.cookie:hover {
+  width: 390px;
+  height: 390px;
+  z-index: 5;
+  transition: 0.2s;
+}
+.cookie:active {
+  width: 360px;
+  height: 360px;
+  transition: 0.1s;
+}
+
+.counter {
+  margin-top: 30%;
+  color: rgb(255, 255, 255);
+  font-family: Minecraftia;
+}
+
+.aliens {
+  width: 153px;
+  height: 153px;
+  margin-top: 51%;
+  left: 49%;
+  z-index: 6;
+  position: absolute;
+  pointer-events: none;
+}
+
+#aaa {
+  transform: rotate(320deg) ;
+  width: 140px;
+  height: auto;
+  margin-top: 57%;
+  margin-left: -37%;
+  position: absolute;
+  z-index:7;
+}

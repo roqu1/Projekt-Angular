@@ -7,11 +7,12 @@ import { HelloComponent } from './hello.component';
 import { Test2Component } from './test2/test2.component';
 import { MitteComponent } from './mitte/mitte.component';
 import { DataService } from './dataservice/data.service';
+import { ErdeComponent } from './erde/erde/erde.component';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent,Test2Component, MitteComponent ],
+  declarations: [ AppComponent, HelloComponent,Test2Component, MitteComponent,ErdeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataService]
 })

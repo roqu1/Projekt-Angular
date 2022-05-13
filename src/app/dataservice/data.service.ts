@@ -15,7 +15,9 @@ export class DataService {
   constructor() {
     this.clicker = {
       "counter":1000000,
-      "counterStr":"0"
+      "counterStr":"0",
+      "gesamtmitarbeiterStr":"0",
+      "mitarbeiterStr":"0"
     }
 
     this.arbeit = { "feldanzahl": 0,
