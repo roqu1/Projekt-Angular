@@ -1,8 +1,8 @@
-import { Component, OnInit, VERSION } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { DataService } from '../dataservice/data.service';
 
 @Component({
-  selector: 'my-erde',
+  selector: 'app-erde',
   templateUrl: './erde.component.html',
   styleUrls: ['./erde.component.css'],
 })
@@ -11,12 +11,11 @@ export class ErdeComponent implements OnInit {
   cookiecounter: number;
   isintervallRunning: boolean = false;
 
-  constructor() {
-    this.cookiecounter = 0;
+  constructor(public data : DataService) {
   }
 
   add(number: number) {
-    this.cookiecounter += number;
+    this.data.click.counter += number;
   }
 
   ngOnInit() {
