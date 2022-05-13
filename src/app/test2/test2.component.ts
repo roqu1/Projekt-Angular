@@ -453,6 +453,7 @@ export class Test2Component implements OnInit {
         this.data.infrastruktur.technikanzahl = this.item[2];
         this.addtocount();
       } else {
+        console.log("dfsfsf")
         this.nomoney();
       }
     }
