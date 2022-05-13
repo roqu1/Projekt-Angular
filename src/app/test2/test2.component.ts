@@ -13,7 +13,7 @@ export class Test2Component implements OnInit {
   addcounter: number;
   item: number[] = [];
   percentages: number[] = [];
-  percentageErdstrasse: number;
+  
   count: number[];
   mitarbeiterGesamtStr: String;
   mitarbeiterGesamt: number;
@@ -33,6 +33,18 @@ export class Test2Component implements OnInit {
   preis_mehrfamilienhaus: number;
   // Infrastruktur
   preis_erdstrasse: number;
+  percentageErdstrasse: number;
+  preis_wasser:number;
+  percentagewasser: number;
+  preis_strom:number;
+  percentagestrom:number;
+  strom_multiplizierung: number;
+  preis_strasse:number;
+  percentagestrasse: number;
+  preis_technik:number;
+  percentagetechnik: number;
+  technik_multiplizierung:number;
+  //Update Zeitlich
   updateCounter = setInterval(() => {
     this.counterToString();
   }, 100);
@@ -64,6 +76,16 @@ export class Test2Component implements OnInit {
     // Infrastruktur
     this.preis_erdstrasse = 500;
     this.percentageErdstrasse = 5;
+    this.preis_wasser = 600;
+    this.percentagewasser = 10;
+    this.preis_strom = 1000;
+    this.percentagestrom = 25;
+    this.strom_multiplizierung=2;
+    this.preis_strasse = 2000;
+    this.percentagestrasse=50;
+    this.preis_technik = 3000;
+    this.percentagetechnik = 100;
+    this.technik_multiplizierung = 2;
   }
 
   update() {
