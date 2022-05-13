@@ -13,7 +13,6 @@ export class Test2Component implements OnInit {
   addcounter: number;
   item: number[] = [];
   percentages: number[] = [];
-  
   count: number[];
   mitarbeiterGesamtStr: String;
   mitarbeiterGesamt: number;
@@ -58,7 +57,6 @@ export class Test2Component implements OnInit {
     this.addcounter = 0; // null am anfang wichtig
     this.item;
     this.timer;
-    let fischbtn = <HTMLButtonElement> document.getElementById('fisch');
     // Mitarbeiter P.S die Reihenfolge ist richtig
     this.mitarbeiter = 0;
     this.mitarbeiterGesamt = 0;
@@ -520,7 +518,7 @@ export class Test2Component implements OnInit {
   disableButton() {
     if (this.data.click.counter<this.preis_fisch) {
       (document.getElementById('fisch') as HTMLInputElement).disabled = true;
-    } else {
+    } else if (this.data.click.counter>=this.preis_fisch){
       (document.getElementById('fisch') as HTMLInputElement).disabled = false;
     }
   }
