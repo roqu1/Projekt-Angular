@@ -38,12 +38,10 @@ export class Test2Component implements OnInit {
   percentagewasser: number;
   preis_strom:number;
   percentagestrom:number;
-  strom_multiplizierung: number;
   preis_strasse:number;
   percentagestrasse: number;
   preis_technik:number;
   percentagetechnik: number;
-  technik_multiplizierung:number;
   //Update Zeitlich
   updateCounter = setInterval(() => {
     this.counterToString();
@@ -80,12 +78,10 @@ export class Test2Component implements OnInit {
     this.percentagewasser = 10;
     this.preis_strom = 1000;
     this.percentagestrom = 25;
-    this.strom_multiplizierung=2;
     this.preis_strasse = 2000;
     this.percentagestrasse=50;
     this.preis_technik = 3000;
     this.percentagetechnik = 100;
-    this.technik_multiplizierung = 2;
   }
 
   update() {
@@ -448,17 +444,17 @@ export class Test2Component implements OnInit {
       } else {
       if (this.data.click.counter >= this.preis_technik) {
         this.funktion_kaufen(this.preis_technik,this.data.infrastruktur.technikanzahl);
-        if(this.data.infrastruktur.technikanzahl==1) {
+        if (this.data.infrastruktur.technikanzahl ==0) {
           this.preis_technik = 6000;
+        }
         this.data.infrastruktur.technikanzahl = this.item[2];
         this.addtocount();
       } else {
-        console.log("dfsfsf")
         this.nomoney();
       }
     }
   }
-}
+
 
 
 
