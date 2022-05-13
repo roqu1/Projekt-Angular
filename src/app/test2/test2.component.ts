@@ -109,12 +109,11 @@ export class Test2Component implements OnInit {
     this.addcounter += this.data.arbeitstellen.mine * 15;
     this.addcounter += this.data.arbeitstellen.oel * 30;
     //Infrastruktur
-    this.addcounter += Math.round(
-      this.data.infrastruktur.erdstrasseanzahl *
-        (this.addcounter / 100) *
-        this.percentageErdstrasse
-    );
-    console.log(this.addcounter);
+    this.addcounter += Math.round(this.data.infrastruktur.erdstrasseanzahl *(this.addcounter / 100) * this.percentageErdstrasse);
+    this.addcounter += Math.round(this.data.infrastruktur.wasseranzahl *(this.addcounter / 100) * this.percentagewasser);
+    this.addcounter += Math.round(this.data.infrastruktur.stromanzahl *(this.addcounter / 100) * this.percentagestrom);
+    this.addcounter += Math.round(this.data.infrastruktur.strasseanzahl *(this.addcounter / 100) * this.percentagestrasse);
+    this.addcounter += Math.round(this.data.infrastruktur.technikanzahl *(this.addcounter / 100) * this.percentagetechnik);
     this.update();
   }
 
@@ -378,11 +377,97 @@ export class Test2Component implements OnInit {
     }
   }
 
+  wasser() {
+    //10 kps%
+    if (this.data.click.counter >= this.preis_wasser) {
+      this.funktion_kaufen(
+        this.preis_wasser,
+        this.data.infrastruktur.wasseranzahl
+      );
+      this.preis_wasser = Math.round(this.item[1]);
+      this.data.infrastruktur.wasseranzahl = this.item[2];
+      this.addtocount();
+    } else {
+      this.nomoney();
+    }
+  }
+  strom() {
+    //25 kps%
+    if (this.data.infrastruktur.stromanzahl==5) {
+      Swal.fire ({
+        icon:'error',
+        title:'Fehler',
+        text:'Mehr als funf kannst du nicht kaufen'
+      })
+    } else {
+    if (this.data.click.counter >= this.preis_strom) {
+      this.funktion_kaufen(this.preis_strom,this.data.infrastruktur.stromanzahl);
+      if(this.data.infrastruktur.stromanzahl==0) {
+        this.preis_strom = 2000;
+    
+      } else if(this.data.infrastruktur.stromanzahl==1) {
+        this.preis_strom = 4000;
+      } else if (this.data.infrastruktur.stromanzahl==2) {
+        this.preis_strom = 8000;
+      } else if (this.data.infrastruktur.stromanzahl==3) {
+        this.preis_strom = 16000;
+      }
+      this.data.infrastruktur.stromanzahl = this.item[2];
+      
+      this.addtocount();
+    } else {
+      this.nomoney();
+    }
+  }
+}
+
+  strasse() {
+      //50 kps%
+      if (this.data.click.counter >= this.preis_strasse) {
+        this.funktion_kaufen(
+          this.preis_strasse,
+          this.data.infrastruktur.strasseanzahl
+        );
+        this.preis_strasse = Math.round(this.item[1]);
+        this.data.infrastruktur.strasseanzahl = this.item[2];
+        this.addtocount();
+      } else {
+        this.nomoney();
+      }
+    }
+
+
+    technik() {
+      //100 kps%
+      if (this.data.infrastruktur.technikanzahl==2) {
+        Swal.fire ({
+          icon:'error',
+          title:'Fehler',
+          text:'Mehr als zwei kannst du nicht kaufen'
+        })
+      } else {
+      if (this.data.click.counter >= this.preis_technik) {
+        this.funktion_kaufen(this.preis_technik,this.data.infrastruktur.technikanzahl);
+        if(this.data.infrastruktur.technikanzahl==1) {
+          this.preis_technik = 6000;
+        this.data.infrastruktur.technikanzahl = this.item[2];
+        this.addtocount();
+      } else {
+        this.nomoney();
+      }
+    }
+  }
+}
+
+
+
+
+  // Fehler/Meldungen
   nomoney() {
     Swal.fire({
       icon: 'warning',
       title: 'Hat nicht funktioniert',
-      text: 'Du hast ja kein Geld!',
+      text: 'Du hast kein Counter',
       confirmButtonText: 'Okay :(',
     });
   }
@@ -399,7 +484,7 @@ export class Test2Component implements OnInit {
     Swal.fire({
       icon: 'info',
       title: 'Keine Mitarbeiter',
-      text: 'Um Mitarbeiter zu bekommen, brauchen Sie etwas in Wohnraum zu kaufen',
+      text: 'Um Mitarbeiter zu bekommen, brauchen Sie mehr Wohnräume',
       timer: 3000,
     });
   }

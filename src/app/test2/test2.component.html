@@ -16,7 +16,7 @@
       <input type="radio" name="tab-btn" id="tab-btn-3" value="" />
       <label for="tab-btn-3">Infrastruktur</label>
 
-      <div id="content-1">
+      <div id="content-1"> <!--Wohnraum-->
       <div class="upgrade-left">
       <th class="black"> Preis: {{preis_zelt}}</th>
       </div>
@@ -90,7 +90,7 @@
           <th class="black"> 30B</th>
           </div>
       </div>
-      <div id="content-2">
+      <div id="content-2"> <!--Arbeitstellen-->
         <div class="upgrade-left">
         <th class="black" > Preis: {{preis_fisch}}</th>
         </div>
@@ -168,9 +168,9 @@
           </div>
       </div>
       </div>
-      <div id="content-3">
+      <div id="content-3"> <!--Infrastruktur-->
       <div class="upgrade-left">
-      <th class="black" > Preis: {{preis_erdstrasse}}</th>
+      <th class="black" > P: {{preis_erdstrasse}}</th>
       </div>
         <label class="tooltip"><button type="button" class="tabcontent" (click)="erdstrasse()">
             <th class="black erdstrasse">Erdstrasse: {{data.infrastruktur.erdstrasseanzahl}}</th>
@@ -182,33 +182,58 @@
           <th class="black " > 5%kp/s</th>
           </div>
         <br />
-        <label class="tooltip"><button type="button" class="tabcontent">
-            <th class="black wasserversorgung">Wasserversorgung</th>
+        <div class="upgrade-left">
+        <th class="black" > P: {{preis_wasser}}</th>
+        </div>
+        <label class="tooltip"><button type="button" class="tabcontent" (click)="wasser()">
+            <th class="black wasserversorgung">Wasserversorgung: {{data.infrastruktur.wasseranzahl}}</th>
           </button>
           <div class="tip_container">
             <span class="tooltiptext">Tooltip text</span>
           </div></label>
+          <div class="upgrade-right">
+          <th class="black"> 10%kp/s</th>
+          </div>
         <br />
+        
+        <div class="upgrade-left">
+        <th class="black" > P: {{preis_strom}}</th>
+        </div>
         <label class="tooltip">
-          <button type="button" class="tabcontent">
-            <th class="black strom">Strom</th>
-          </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Tooltip text</span>
-          </div></label><br />
-        <label class="tooltip"><button type="button" class="tabcontent">
-            <th class="black straße">Straße</th>
-          </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Tooltip text</span>
-          </div></label><br />
-        <label class="tooltip">
-          <button type="button" class="tabcontent">
-            <th class="black WdT">Wunder der Technik</th>
+          <button type="button" class="tabcontent" (click)="strom()">
+            <th class="black strom">Strom: {{data.infrastruktur.stromanzahl}}</th>
           </button>
           <div class="tip_container">
             <span class="tooltiptext">Tooltip text</span>
           </div></label>
+          <div class="upgrade-right">
+          <th class="black"> 25%kp/s</th>
+          </div><br />
+          <div class="upgrade-left">
+          <th class="black" > P: {{preis_strasse}}</th>
+          </div>
+        <label class="tooltip"><button type="button" class="tabcontent" (click)="strasse()">
+            <th class="black straße">Straße: {{data.infrastruktur.strasseanzahl}}</th>
+          </button>
+          <div class="tip_container">
+            <span class="tooltiptext">Tooltip text</span>
+          </div></label>
+          <div class="upgrade-right">
+          <th class="black"> 50%kp/s</th>
+          </div><br />
+          <div class="upgrade-left">
+          <th class="black" > P: {{preis_technik}}</th>
+          </div>
+        <label class="tooltip">
+          <button type="button" class="tabcontent" (click)="technik()">
+            <th class="black WdT">Wunder der Technik: {{data.infrastruktur.technikanzahl}}</th>
+          </button>
+          <div class="tip_container">
+            <span class="tooltiptext">Tooltip text</span>
+          </div></label>
+          <div class="upgrade-right">
+          <th class="black"> 100%kp/s</th>
+          </div>
         </div>
       
     </div>
