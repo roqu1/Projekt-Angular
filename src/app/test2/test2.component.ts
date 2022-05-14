@@ -44,6 +44,7 @@ export class Test2Component implements OnInit {
   percentagetechnik: number;
   
   //buttons
+
   
   //Update Zeitlich
   updateCounter = setInterval(() => {
@@ -208,8 +209,10 @@ export class Test2Component implements OnInit {
     }
   }
   feld() {
+    
     if (this.data.click.counter > this.preis_feld) {
       if (this.mitarbeiter >= 5) {
+        if (this.data.infrastruktur.erdstrasseanzahl >0 && this.data.infrastruktur.wasseranzahl > 0) {
         this.funktion_kaufen(
           this.preis_feld,
           this.data.arbeitstellen.feldanzahl
@@ -224,6 +227,11 @@ export class Test2Component implements OnInit {
 
         let text = this.data.arbeitstellen.feldanzahl.toString();
         document.getElementById(text + 'feld').style.visibility = 'visible';
+        } else {
+          Swal.fire ({
+            text:'Sie müssen zuerst Wasserversorgung und Erdstraße bauen'
+          })
+        }
       } else {
         this.noworkers();
       }
@@ -234,7 +242,8 @@ export class Test2Component implements OnInit {
 
   holzfaeller() {
     if (this.data.click.counter > this.preis_holzfaeller) {
-      if (this.mitarbeiter >= 5) {
+      if (this.mitarbeiter >= 10) {
+        if (this.data.infrastruktur.erdstrasseanzahl >0 && this.data.infrastruktur.technikanzahl > 0) {
         this.funktion_kaufen(
           this.preis_holzfaeller,
           this.data.arbeitstellen.holzfaeller
@@ -250,6 +259,11 @@ export class Test2Component implements OnInit {
         let text = this.data.arbeitstellen.holzfaeller.toString();
         document.getElementById(text + 'holzfaeller').style.visibility =
           'visible';
+        } else {
+        Swal.fire ({
+          text:'Sie müssen zuerst Wunder der Technik und Erdstraße bauen'
+        })
+      }
       } else {
         this.noworkers();
       }
@@ -260,7 +274,8 @@ export class Test2Component implements OnInit {
 
   mine() {
     if (this.data.click.counter > this.preis_mine) {
-      if (this.mitarbeiter >= 5) {
+      if (this.mitarbeiter >= 50) {
+        if (this.data.infrastruktur.erdstrasseanzahl >0 && this.data.infrastruktur.technikanzahl > 1 && this.data.infrastruktur.stromanzahl>0) {
         this.funktion_kaufen(this.preis_mine, this.data.arbeitstellen.mine);
         this.preis_mine = Math.round(this.item[1]);
         this.data.arbeitstellen.mine = this.item[2];
@@ -273,6 +288,11 @@ export class Test2Component implements OnInit {
         let text = this.data.arbeitstellen.mine.toString();
         document.getElementById(text + 'mine').style.visibility = 'visible';
       } else {
+        Swal.fire ({
+          text:'Sie müssen zuerst Wunder der Technik 2,Strom und Erdstraße bauen'
+        })
+      }
+      } else {
         this.noworkers();
       }
     } else {
@@ -282,7 +302,7 @@ export class Test2Component implements OnInit {
 
   oel() {
     if (this.data.click.counter > this.preis_oel) {
-      if (this.mitarbeiter >= 5) {
+      if (this.mitarbeiter >= 70) {
         this.funktion_kaufen(this.preis_oel, this.data.arbeitstellen.oel);
         this.preis_oel = Math.round(this.item[1]);
         this.data.arbeitstellen.oel = this.item[2];
@@ -520,8 +540,8 @@ export class Test2Component implements OnInit {
   }
 
   disableButton() {
-    const fischbtn = (document.getElementById('fisch') as HTMLInputElement);
-    const feldbtn = (document.getElementById('feld') as HTMLInputElement);
+    const fisch = (document.getElementById('fisch') as HTMLInputElement);
+    const feld = (document.getElementById('feld') as HTMLInputElement);
     const holzfaeller = (document.getElementById('holzfaeller') as HTMLInputElement);
     const mine = (document.getElementById('mine') as HTMLInputElement);
     const oel = (document.getElementById('oel') as HTMLInputElement);
@@ -538,8 +558,8 @@ export class Test2Component implements OnInit {
 
     
     
-    this.funktion_button(fischbtn,this.preis_fisch);
-    this.funktion_button(feldbtn,this.preis_feld);
+    this.funktion_button(fisch,this.preis_fisch);
+    this.funktion_button(feld,this.preis_feld);
     this.funktion_button(holzfaeller,this.preis_holzfaeller);
     this.funktion_button(mine,this.preis_mine);
     this.funktion_button(oel,this.preis_oel);
