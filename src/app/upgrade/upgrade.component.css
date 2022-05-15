@@ -12,6 +12,7 @@
   min-width: 393px;
   right: 0;
   height: 100vh;
+  border:3px solid #3f3f3f;
 }
 
 #faq {
