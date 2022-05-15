@@ -142,7 +142,7 @@
   transition: opacity 0.7s;
 }
 
-/* Tooltip strela */
+/* Tooltip strela 
 .tooltip .tooltiptext::after {
   content: '';
   position: absolute;
@@ -152,7 +152,7 @@
   border-width: 5px;
   border-style: solid;
   border-color: transparent rgb(169, 245, 159) transparent transparent;
-}
+}*/
 
 /* Zeig die Tooltip wenn maus darauf */
 .tooltip:hover .tooltiptext {
