@@ -329,6 +329,7 @@ export class UpgradeComponent implements OnInit {
       this.preis_zelt = Math.round(this.item[1]);
       this.data.wohnraum.zeltanzahl = this.item[2];
       this.mitarbeiter += 2;
+      this.mitarbeiter_funktion(this.mitarbeiterGesamt, this.mitarbeiter);
     } else {
       this.nomoney();
     }
@@ -342,6 +343,7 @@ export class UpgradeComponent implements OnInit {
       this.preis_bungalow = Math.round(this.item[1]);
       this.data.wohnraum.bungalowanzahl = this.item[2];
       this.mitarbeiter += 4;
+      this.mitarbeiter_funktion(this.mitarbeiterGesamt, this.mitarbeiter);
     } else {
       this.nomoney();
     }
@@ -352,6 +354,7 @@ export class UpgradeComponent implements OnInit {
       this.preis_haus = Math.round(this.item[1]);
       this.data.wohnraum.hausanzahl = this.item[2];
       this.mitarbeiter += 6;
+      this.mitarbeiter_funktion(this.mitarbeiterGesamt, this.mitarbeiter);
     } else {
       this.nomoney();
     }
@@ -365,6 +368,7 @@ export class UpgradeComponent implements OnInit {
       this.preis_einfamilienhaus = Math.round(this.item[1]);
       this.data.wohnraum.einfamilienhausanzahl = this.item[2];
       this.mitarbeiter += 12;
+      this.mitarbeiter_funktion(this.mitarbeiterGesamt, this.mitarbeiter);
     } else {
       this.nomoney();
     }
@@ -378,6 +382,7 @@ export class UpgradeComponent implements OnInit {
       this.preis_mehrfamilienhaus = Math.round(this.item[1]);
       this.data.wohnraum.mehrfamilienhausanzahl = this.item[2];
       this.mitarbeiter += 30;
+      this.mitarbeiter_funktion(this.mitarbeiterGesamt, this.mitarbeiter);
     } else {
       this.nomoney();
     }
