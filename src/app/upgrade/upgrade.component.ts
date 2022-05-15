@@ -596,6 +596,50 @@ export class UpgradeComponent implements OnInit {
     }
   }
 
+  // Buttons unden Upgrade
+  reset() {
+    Swal.fire({
+      title: 'Bist du sicher?',
+      text: "Du kannst deine Daten nicht wiederherstellen",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ja, Daten zurücksetzen!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.data.click.counter=0;
+        this.addcounter=0;
+        this.mitarbeiterGesamt=0;
+        this.mitarbeiter=0;
+        this.data.arbeitstellen.feldanzahl=0;
+        this.data.arbeitstellen.fischeranzahl=0;
+        this.data.arbeitstellen.holzfaeller=0;
+        this.data.arbeitstellen.mine=0;
+        this.data.arbeitstellen.oel=0;
+        this.data.wohnraum.zeltanzahl=0;
+        this.data.wohnraum.bungalowanzahl=0;
+        this.data.wohnraum.hausanzahl=0;
+        this.data.wohnraum.einfamilienhausanzahl=0;
+        this.data.wohnraum.mehrfamilienhausanzahl=0;
+        this.data.arbeitstellen.feldanzahl=0;
+        this.data.arbeitstellen.feldanzahl=0;
+        this.data.infrastruktur.erdstrasseanzahl=0;
+        this.data.infrastruktur.wasseranzahl=0;
+        this.data.infrastruktur.stromanzahl=0;
+        this.data.infrastruktur.strasseanzahl=0;
+        this.data.infrastruktur.technikanzahl=0;
+        Swal.fire(
+          'Erfolgreich!',
+          'Deine Daten sind zurückgesetzt.',
+          'success'
+        )
+      }
+    })
+   
+
+  }
+
   
 
   ngOnInit() {}
