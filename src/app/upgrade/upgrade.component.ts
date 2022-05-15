@@ -556,7 +556,7 @@ export class UpgradeComponent implements OnInit {
     const einfamilienhaus = (document.getElementById('einfamilienhaus') as HTMLInputElement);
     const mehrfamilienhaus = (document.getElementById('mehrfamilienhaus') as HTMLInputElement);
 
-    
+  
     
     this.funktion_button(fisch,this.preis_fisch);
     this.funktion_button(feld,this.preis_feld);
@@ -574,6 +574,15 @@ export class UpgradeComponent implements OnInit {
     this.funktion_button(einfamilienhaus,this.preis_einfamilienhaus);
     this.funktion_button(mehrfamilienhaus,this.preis_mehrfamilienhaus);
 
+
+    if (this.data.infrastruktur.technikanzahl ==2) {
+      this.funktion_button(technik,Number.MAX_SAFE_INTEGER);
+    } else {
+      this.fehler()
+    
+
+
+
   }
 
   funktion_button(btnname,preisbtn) {
@@ -585,6 +594,8 @@ export class UpgradeComponent implements OnInit {
       btnname.disabled = false;
     }
   }
+
+  
 
   ngOnInit() {}
 }
