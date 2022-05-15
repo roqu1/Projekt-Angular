@@ -13,6 +13,14 @@
   right: 0;
 }
 
+#faq {
+  height: calc(100vh - 527px);
+}
+
+.zweitetab {
+  position: relative;
+}
+
 .rightcookie {
   float: right;
   width: 30vw;
