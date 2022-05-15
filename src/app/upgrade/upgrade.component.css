@@ -11,10 +11,11 @@
   margin: 0;
   min-width: 393px;
   right: 0;
+  height: 100vh;
 }
 
 #faq {
-  height: calc(100vh - 527px);
+  
 }
 
 .zweitetab {
