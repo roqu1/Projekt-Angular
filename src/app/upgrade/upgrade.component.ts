@@ -577,10 +577,11 @@ export class UpgradeComponent implements OnInit {
 
     if (this.data.infrastruktur.technikanzahl ==2) {
       this.funktion_button(technik,Number.MAX_SAFE_INTEGER);
-    } else {
-      this.fehler()
+    }
     
-
+    if (this.data.infrastruktur.stromanzahl == 5) {
+      this.funktion_button(strom,Number.MAX_SAFE_INTEGER);
+    }
 
 
   }
