@@ -26,6 +26,31 @@
   border: 2px solid black;
 }
 
+#textfaq {
+  background-color: #151515;
+  position: absolute;
+  border: 5px solid #000000;
+  z-index: 16;
+  width: 50%;
+  font-size: 20pt;
+  height: calc(100vh - 10px);
+  color: whitesmoke;
+  min-width: 400px;
+  display: none;
+}
+
+.closediv {
+  bottom: 25px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#closebtn {
+  font-size: 20pt;
+  
+}
+
 .zweitetab {
   position: relative;
 }

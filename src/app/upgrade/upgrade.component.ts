@@ -596,7 +596,7 @@ export class UpgradeComponent implements OnInit {
     }
   }
 
-  // Buttons unden Upgrade
+  // Buttons unten Upgrade
   reset() {
     Swal.fire({
       title: 'Bist du sicher?',
@@ -629,6 +629,21 @@ export class UpgradeComponent implements OnInit {
         this.data.infrastruktur.stromanzahl=0;
         this.data.infrastruktur.strasseanzahl=0;
         this.data.infrastruktur.technikanzahl=0;
+        this.preis_bungalow=300;
+        this.preis_einfamilienhaus=1000;
+        this.preis_erdstrasse=500;
+        this.preis_feld=400;
+        this.preis_fisch=200;
+        this.preis_haus=500;
+        this.preis_holzfaeller=600;
+        this.preis_mehrfamilienhaus=3000;
+        this.preis_mine=1000;
+        this.preis_oel=2500;
+        this.preis_strasse=2000;
+        this.preis_strom=1000;
+        this.preis_technik=3000;
+        this.preis_wasser=600;
+        this.preis_zelt=200;
         Swal.fire(
           'Erfolgreich!',
           'Deine Daten sind zurückgesetzt.',
@@ -636,8 +651,16 @@ export class UpgradeComponent implements OnInit {
         )
       }
     })
-   
+  }
 
+  faqclose() {
+    const closediv = (document.getElementById('textfaq') as HTMLInputElement);
+    closediv.style.display = "none";
+  }
+
+  faqopen() {
+    const opendiv = (document.getElementById('textfaq') as HTMLInputElement);
+    opendiv.style.display= "unset";
   }
 
   
