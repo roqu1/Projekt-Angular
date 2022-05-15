@@ -22,8 +22,17 @@
 }
 
 .faqbtn {
-  height: 5vh;
+  height: 60px;
+  width: 100px;
   border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+
+.faqbtn:active {
+  box-shadow: 0 4px #999;
+  transform: translateY(3px);
+  transition: 0.2s;
 }
 
 #textfaq {
