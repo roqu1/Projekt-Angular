@@ -9,9 +9,17 @@ import { DataService } from '../dataservice/data.service';
 export class ErdeComponent implements OnInit {
 
   isintervallRunning: boolean = false;
+  counterStr:String;
 
   constructor(public data : DataService) {
+    this.counterStr = ''+data.click.counter;
+    this.counterStr = this.counterStr.replace(
+      /\B(?=(\d{3})+(?!\d))/g,
+      '.'
+    );
   }
+
+
 
   add() {
     this.data.click.counter++;
