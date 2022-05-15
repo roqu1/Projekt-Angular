@@ -6,11 +6,11 @@ import Swal from 'sweetalert2';
 import { transformAll } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
-  selector: 'app-test2',
-  templateUrl: './test2.component.html',
-  styleUrls: ['./test2.component.css'],
+  selector: 'app-upgrade',
+  templateUrl: './upgrade.component.html',
+  styleUrls: ['./upgrade.component.css'],
 })
-export class Test2Component implements OnInit {
+export class UpgradeComponent implements OnInit {
   addcounter: number;
   item: number[] = [];
   percentages: number[] = [];
@@ -186,7 +186,7 @@ export class Test2Component implements OnInit {
   // Arbeitstellen
 
   fischer() {
-    if (this.data.click.counter > this.preis_fisch) {
+    if (this.data.click.counter >= this.preis_fisch) {
       if (this.mitarbeiter >= 2) {
         this.funktion_kaufen(
           this.preis_fisch,
@@ -210,7 +210,7 @@ export class Test2Component implements OnInit {
   }
   feld() {
     
-    if (this.data.click.counter > this.preis_feld) {
+    if (this.data.click.counter >= this.preis_feld) {
       if (this.mitarbeiter >= 5) {
         if (this.data.infrastruktur.erdstrasseanzahl >0 && this.data.infrastruktur.wasseranzahl > 0) {
         this.funktion_kaufen(
@@ -241,7 +241,7 @@ export class Test2Component implements OnInit {
   }
 
   holzfaeller() {
-    if (this.data.click.counter > this.preis_holzfaeller) {
+    if (this.data.click.counter >= this.preis_holzfaeller) {
       if (this.mitarbeiter >= 10) {
         if (this.data.infrastruktur.erdstrasseanzahl >0 && this.data.infrastruktur.technikanzahl > 0) {
         this.funktion_kaufen(
@@ -273,7 +273,7 @@ export class Test2Component implements OnInit {
   }
 
   mine() {
-    if (this.data.click.counter > this.preis_mine) {
+    if (this.data.click.counter >= this.preis_mine) {
       if (this.mitarbeiter >= 50) {
         if (this.data.infrastruktur.erdstrasseanzahl >0 && this.data.infrastruktur.technikanzahl > 1 && this.data.infrastruktur.stromanzahl>0) {
         this.funktion_kaufen(this.preis_mine, this.data.arbeitstellen.mine);
@@ -301,7 +301,7 @@ export class Test2Component implements OnInit {
   }
 
   oel() {
-    if (this.data.click.counter > this.preis_oel) {
+    if (this.data.click.counter >= this.preis_oel) {
       if (this.mitarbeiter >= 70) {
         this.funktion_kaufen(this.preis_oel, this.data.arbeitstellen.oel);
         this.preis_oel = Math.round(this.item[1]);
