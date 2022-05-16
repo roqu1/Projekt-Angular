@@ -133,9 +133,10 @@
 
   /* Stelle der Tooltip text */
   position: absolute;
+  display: inline-block;
   z-index: 1;
   bottom: 4%;
-  left: 110%;
+  right: 110%;
 
   /* Fade tooltip */
   opacity: 0;

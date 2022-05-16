@@ -658,6 +658,8 @@ export class UpgradeComponent implements OnInit {
     })
   }
 
+  // FAQ
+
   faqclose() {
     const closediv = (document.getElementById('textfaq') as HTMLInputElement);
     closediv.style.display = "none";
@@ -668,6 +670,7 @@ export class UpgradeComponent implements OnInit {
     opendiv.style.display= "unset";
   }
 
+  
   
 
   ngOnInit() {}

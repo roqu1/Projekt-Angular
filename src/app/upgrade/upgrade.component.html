@@ -27,13 +27,14 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
       <th class="black"> Preis: {{preis_zelt}}</th>
       </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Nicht gerade groß, oder bequem, oder angenehm, aber Billig</span>
+      </div>
           <button type="button" class="tabcontent" id="zelt" (click)="zelt()">
             <th class="black zelt">Zelt:     
               {{data.wohnraum.zeltanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Nicht gerade groß, oder bequem, oder angenehm, aber Billig</span>
-          </div></label>
+          </label>
 
           <div class="upgrade-right">
           <th class="black"> 2 Bewohner</th>
@@ -43,12 +44,13 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <th class="black"> Preis: {{preis_bungalow}}</th>
         </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Ein Dach über den Kopf und 4 wände zum wohlfüllen</span>
+      </div>
           <button type="button" class="tabcontent" id="bungalow" (click)="bungalow()">
             <th class="black bungalow">Bungalow: {{data.wohnraum.bungalowanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Ein Dach über den Kopf und 4 wände zum wohlfüllen</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black"> 4B</th>
           </div>
@@ -57,12 +59,13 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <th class="black"> Preis: {{preis_haus}}</th>
         </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">2 Etagen und ein Keller ist genug platz für Einige Leute</span>
+      </div>
           <button type="button" class="tabcontent" id="haus" (click)="haus()">
             <th class="black haus">Haus: {{data.wohnraum.hausanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">2 Etagen und ein Keller ist genug platz für Einige Leute</span>
-          </div></label>
+         </label>
           <div class="upgrade-right">
           <th class="black"> 6B</th>
           </div>
@@ -71,13 +74,14 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           <th class="black"> Preis: {{preis_einfamilienhaus}}</th>
           </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Genug platz für die Ganze familie inklusive Oma, Opa, Onkel, Tante…</span>
+      </div>
           <button type="button" class="tabcontent" id="einfamilienhaus" (click)="einfamilienhaus()">
             <th class="black einfamilienhaus">Einfamilienhaus: {{data.wohnraum.einfamilienhausanzahl}}</th>
           </button>
 
-          <div class="tip_container">
-            <span class="tooltiptext">Genug platz für die Ganze familie inklusive Oma, Opa, Onkel, Tante…</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black"> 12B</th>
           </div>
@@ -86,12 +90,13 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           <th class="black"> P:{{preis_mehrfamilienhaus}}</th>
           </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Wer Bohrt da schonwieder!?</span>
+      </div>
           <button type="button" class="tabcontent" id="mehrfamilienhaus" (click)="mehrfamilienhaus()">
             <th class="black mehrfamilienhaus">Mehrfamilienhaus: {{data.wohnraum.mehrfamilienhausanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Wer Bohrt da schonwieder!?</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black"> 30B</th>
           </div>
@@ -102,7 +107,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         </div>
         <div class="upgrade-mid">
         <label class="tooltip">
-        
+        <div class="tip_container">
+        <span class="tooltiptext">Verbringt seine Zeit damit Seine Rute ins Wasser zu halten und versuchen nicht einzuschlafen</span>
+      </div>
           <button type="button" class="tabcontent" id="fisch" (click)="fischer()" >
             <th class="black fischer">
               Fischer: {{ data.arbeitstellen.fischeranzahl }}
@@ -110,9 +117,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           </button>
 
           
-          <div class="tip_container">
-            <span class="tooltiptext">Verbringt seine Zeit damit Seine Rute ins Wasser zu halten und versuchen nicht einzuschlafen</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black " > 1kp/s</th>
           </div>
@@ -121,14 +126,15 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <th class="black" > Preis: {{preis_feld}}</th>
         </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Wer will denn nicht gerne den ganzen Tag im Dreck graben und sich um Tiere kümmern?</span>
+      </div>
           <button type="button" class="tabcontent" id="feld" (click)="feld()" >
             <th class="black feld">
               Feld: {{ data.arbeitstellen.feldanzahl }}
             </th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Wer will denn nicht gerne den ganzen Tag im Dreck graben und sich um Tiere kümmern?</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black " > 2kp/s</th>
           </div>
@@ -137,14 +143,15 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <th class="black" > Preis: {{preis_holzfaeller}}</th>
         </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">
+        Schwingt Äxte und ist der Offizielle Erzfeind von Greta Thunberg
+        </span>
+      </div>
           <button type="button" class="tabcontent" id="holzfaeller" (click)="holzfaeller()">
             <th class="black holzfäller">Holzfäller: {{data.arbeitstellen.holzfaeller}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">
-            Schwingt Äxte und ist der Offizielle Erzfeind von Greta Thunberg
-            </span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black " > 5kp/s</th>
           </div>
@@ -152,12 +159,14 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           <div class="upgrade-left">
           <th class="black" > Preis: {{preis_mine}}</th>
           </div>
-        <label class="tooltip"><button type="button" class="tabcontent" id="mine" (click)="mine()">
+        <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Grabt auch im Dreck rum, aber Tiefer</span>
+       </div>
+      <button type="button" class="tabcontent" id="mine" (click)="mine()">
             <th class="black mine">Mine: {{data.arbeitstellen.mine}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Grabt auch im Dreck rum, aber Tiefer</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black " > 15kp/s</th>
           </div>
@@ -165,12 +174,14 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           <div class="upgrade-left">
           <th class="black" > Preis: {{preis_oel}}</th>
           </div>
-        <label class="tooltip"><button type="button" class="tabcontent" id="oel" (click)="oel()">
+        <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Warte ab bis du einen Besuch von den USA bekommst</span>
+          </div>
+           <button type="button" class="tabcontent" id="oel" (click)="oel()">
             <th class="black öl">Öl: {{data.arbeitstellen.oel}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Warte ab bis du einen Besuch von den USA bekommst</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black " > 30kp/s</th>
           </div>
@@ -180,12 +191,14 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
       <div class="upgrade-left">
       <th class="black" > P: {{preis_erdstrasse}}</th>
       </div>
-        <label class="tooltip"><button type="button" class="tabcontent" id="erdstrasse" (click)="erdstrasse()">
+        <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Man kann sich zumindest die Wege besser merken          </span>
+         </div>
+          <button type="button" class="tabcontent" id="erdstrasse" (click)="erdstrasse()">
             <th class="black erdstrasse">Erdstrasse: {{data.infrastruktur.erdstrasseanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Man kann sich zumindest die Wege besser merken          </span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black " > 5%kp/s</th>
           </div>
@@ -193,12 +206,14 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <div class="upgrade-left">
         <th class="black" > P: {{preis_wasser}}</th>
         </div>
-        <label class="tooltip"><button type="button" class="tabcontent" id="wasser" (click)="wasser()">
+        <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Jetzt muss man zumindest nichtmehr zum Brunnen Laufen</span>
+          </div>
+          <button type="button" class="tabcontent" id="wasser" (click)="wasser()">
             <th class="black wasserversorgung">Wasserversorgung: {{data.infrastruktur.wasseranzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Jetzt muss man zumindest nichtmehr zum Brunnen Laufen</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black"> 10%kp/s</th>
           </div>
@@ -208,24 +223,27 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <th class="black" > P: {{preis_strom}}</th>
         </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">AC/DC für alle</span>
+        </div>
           <button type="button" class="tabcontent" id="strom" (click)="strom()">
             <th class="black strom">Strom: {{data.infrastruktur.stromanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">AC/DC für alle</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black"> 25%kp/s</th>
           </div><br />
           <div class="upgrade-left">
           <th class="black" > P: {{preis_strasse}}</th>
           </div>
-        <label class="tooltip"><button type="button" class="tabcontent" id="strasse" (click)="strasse()">
+        <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">Löst sich nichtmehr im Regen auf</span>
+        </div>  
+        <button type="button" class="tabcontent" id="strasse" (click)="strasse()">
             <th class="black straße">Straße: {{data.infrastruktur.strasseanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">Löst sich nichtmehr im Regen auf</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black"> 50%kp/s</th>
           </div><br />
@@ -233,12 +251,13 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           <th class="black" > P: {{preis_technik}}</th>
           </div>
         <label class="tooltip">
+        <div class="tip_container">
+        <span class="tooltiptext">I´m with the science team</span>
+        </div>
           <button type="button" class="tabcontent" id="technik" (click)="technik()">
             <th class="black WdT">Wunder der Technik: {{data.infrastruktur.technikanzahl}}</th>
           </button>
-          <div class="tip_container">
-            <span class="tooltiptext">I´m with the science team</span>
-          </div></label>
+          </label>
           <div class="upgrade-right">
           <th class="black"> 100%kp/s</th>
           </div>
@@ -248,12 +267,12 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
   </table>
 
  
-
+    <div class="buttonscontrainer">
   <div id="faq">
   <button id="reset" class="faqbtn" (click)="reset()">Reset</button>
   <button id="hilfe" class="faqbtn" (click)="faqopen()">FAQ</button>
   </div>
-
+</div>    
 </div>
 
 </body>
