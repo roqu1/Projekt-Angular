@@ -5,10 +5,20 @@
   border-bottom: 1px dotted black;
 }
 
+.arbeiter, .geld{
+  width: 30px;
+  height: auto;
+}
+
+.geldkleiner {
+  width: 15px;
+}
+
+
 .Upgrade {
   text-align: center;
   background-color: grey;
-  min-width: 393px;
+  min-width: 503px;
   right: 0;
   height: 100vh;
   outline:3px solid #131313;
@@ -38,14 +48,15 @@
 
 #textfaq {
   background-color: #151515;
-  position: absolute;
-  outline: 5px solid #202020;
-  z-index: 16;
-  font-size: 20pt;
-  height: 100vh;
-  color: whitesmoke;
-  min-width: 400px;
-  display: none;
+    position: absolute;
+    outline: 5px solid #202020;
+    z-index: 16;
+    font-size: 20pt;
+    height: 50vh;
+    color: whitesmoke;
+    width: 400px;
+    min-width: 400px;
+    display: none;
 }
 
 .closediv {

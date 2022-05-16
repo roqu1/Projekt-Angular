@@ -7,9 +7,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
 <body>
 <div class="Upgrade">
   <h1 class="green shadow">Upgrades</h1>
-  <h2 class="counter" style="width:100%">Counter: {{ data.click.counterStr }}</h2>
-  <p id="addcounter" class="black">{{addcounter}} pro Sekunde</p>
-  <p>Mitarbeiter arbeiten: {{mitarbeiterGesamtStr}}/Freie Mitarbeiter: {{mitarbeiterStr}}  </p>
+  <h2 class="counter" style="width:100%">Counter: {{ data.click.counterStr }}<img class="geld" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></h2>
+  <p id="addcounter" class="black">{{addcounter}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"> pro Sekunde</p>
+  <p>Mitarbeiter arbeiten: {{mitarbeiterGesamtStr}}<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">/Freie Mitarbeiter: {{mitarbeiterStr}}<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">  </p>
 
   <table class="gebauede tab" style="width: 100%">
     <div class="tabs">
@@ -24,7 +24,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
 
       <div id="content-1"> <!--Wohnraum-->
       <div class="upgrade-left">
-      <th class="black"> Preis: {{preis_zelt}}</th>
+      <th class="black"> Preis: {{preis_zelt}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
       </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -37,11 +37,11 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           </label>
 
           <div class="upgrade-right">
-          <th class="black"> 2 Bewohner</th>
+          <th class="black"> 2<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png"></th>
           </div>
         <br/>
         <div class="upgrade-left">
-        <th class="black"> Preis: {{preis_bungalow}}</th>
+        <th class="black"> Preis: {{preis_bungalow}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -52,11 +52,11 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           </button>
           </label>
           <div class="upgrade-right">
-          <th class="black"> 4B</th>
+          <th class="black"> 4<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png"></th>
           </div>
         <br/>
         <div class="upgrade-left">
-        <th class="black"> Preis: {{preis_haus}}</th>
+        <th class="black"> Preis: {{preis_haus}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -67,11 +67,11 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           </button>
          </label>
           <div class="upgrade-right">
-          <th class="black"> 6B</th>
+          <th class="black"> 6<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png"></th>
           </div>
           <br/>
           <div class="upgrade-left">
-          <th class="black"> Preis: {{preis_einfamilienhaus}}</th>
+          <th class="black"> Preis: {{preis_einfamilienhaus}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
           </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -83,11 +83,11 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
 
           </label>
           <div class="upgrade-right">
-          <th class="black"> 12B</th>
+          <th class="black"> 12<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png"></th>
           </div>
           <br />
           <div class="upgrade-left">
-          <th class="black"> P:{{preis_mehrfamilienhaus}}</th>
+          <th class="black"> P:{{preis_mehrfamilienhaus}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
           </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -98,12 +98,12 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           </button>
           </label>
           <div class="upgrade-right">
-          <th class="black"> 30B</th>
+          <th class="black"> 30<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png"></th>
           </div>
       </div>
       <div id="content-2"> <!--Arbeitstellen-->
         <div class="upgrade-left">
-        <th class="black" > Preis: {{preis_fisch}}</th>
+        <th class="black" > Preis: {{preis_fisch}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <div class="upgrade-mid">
         <label class="tooltip">
@@ -114,16 +114,16 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
             <th class="black fischer">
               Fischer: {{ data.arbeitstellen.fischeranzahl }}
             </th>
-          </button>
-
+          </button></label>
+          2<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
           
-          </label>
+          
           <div class="upgrade-right">
           <th class="black " > 1kp/s</th>
           </div>
         <br />
         <div class="upgrade-left">
-        <th class="black" > Preis: {{preis_feld}}</th>
+        <th class="black" > Preis: {{preis_feld}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -135,12 +135,13 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
             </th>
           </button>
           </label>
+          5<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
           <div class="upgrade-right">
           <th class="black " > 2kp/s</th>
           </div>
         <br/>
         <div class="upgrade-left">
-        <th class="black" > Preis: {{preis_holzfaeller}}</th>
+        <th class="black" > Preis: {{preis_holzfaeller}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -152,12 +153,13 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
             <th class="black holzfäller">Holzfäller: {{data.arbeitstellen.holzfaeller}}</th>
           </button>
           </label>
+          10<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
           <div class="upgrade-right">
           <th class="black " > 5kp/s</th>
           </div>
           <br />
           <div class="upgrade-left">
-          <th class="black" > Preis: {{preis_mine}}</th>
+          <th class="black" > Preis: {{preis_mine}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
           </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -167,12 +169,13 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
             <th class="black mine">Mine: {{data.arbeitstellen.mine}}</th>
           </button>
           </label>
+          50<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
           <div class="upgrade-right">
           <th class="black " > 15kp/s</th>
           </div>
           <br />
           <div class="upgrade-left">
-          <th class="black" > Preis: {{preis_oel}}</th>
+          <th class="black" > Preis: {{preis_oel}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
           </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -182,6 +185,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
             <th class="black öl">Öl: {{data.arbeitstellen.oel}}</th>
           </button>
           </label>
+          70<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
           <div class="upgrade-right">
           <th class="black " > 30kp/s</th>
           </div>
@@ -189,11 +193,11 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
       </div>
       <div id="content-3"> <!--Infrastruktur-->
       <div class="upgrade-left">
-      <th class="black" > P: {{preis_erdstrasse}}</th>
+      <th class="black" > P: {{preis_erdstrasse}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
       </div>
         <label class="tooltip">
         <div class="tip_container">
-        <span class="tooltiptext">Man kann sich zumindest die Wege besser merken          </span>
+        <span class="tooltiptext">Man kann sich zumindest die Wege besser merken</span>
          </div>
           <button type="button" class="tabcontent" id="erdstrasse" (click)="erdstrasse()">
             <th class="black erdstrasse">Erdstrasse: {{data.infrastruktur.erdstrasseanzahl}}</th>
@@ -204,7 +208,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           </div>
         <br />
         <div class="upgrade-left">
-        <th class="black" > P: {{preis_wasser}}</th>
+        <th class="black" > P: {{preis_wasser}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -220,7 +224,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <br />
         
         <div class="upgrade-left">
-        <th class="black" > P: {{preis_strom}}</th>
+        <th class="black" > P: {{preis_strom}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -234,7 +238,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           <th class="black"> 7.5%kp/s</th>
           </div><br />
           <div class="upgrade-left">
-          <th class="black" > P: {{preis_strasse}}</th>
+          <th class="black" > P: {{preis_strasse}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
           </div>
         <label class="tooltip">
         <div class="tip_container">
@@ -248,7 +252,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           <th class="black"> 10%kp/s</th>
           </div><br />
           <div class="upgrade-left">
-          <th class="black" > P: {{preis_technik}}</th>
+          <th class="black" > P: {{preis_technik}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
           </div>
         <label class="tooltip">
         <div class="tip_container">
