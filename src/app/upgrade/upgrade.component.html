@@ -9,7 +9,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
   <h1 class="green shadow">Upgrades</h1>
   <h2 class="counter" style="width:100%">Counter: {{ data.click.counterStr }}<img class="geld" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></h2>
   <p id="addcounter" class="black">{{addcounter}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"> pro Sekunde</p>
-  <p>Mitarbeiter arbeiten: {{mitarbeiterGesamtStr}}<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">/Freie Mitarbeiter: {{mitarbeiterStr}}<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">  </p>
+  <p>Mitarbeiter arbeiten: {{mitarbeiterGesamtStr}}<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">/Freie Mitarbeiter: {{mitarbeiterStr}}</p>
 
   <table class="gebauede tab" style="width: 100%">
     <div class="tabs">
@@ -31,8 +31,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Nicht gerade groß, oder bequem, oder angenehm, aber Billig</span>
       </div>
           <button type="button" class="tabcontent" id="zelt" (click)="zelt()">
-            <th class="black zelt">Zelt:     
-              {{data.wohnraum.zeltanzahl}}</th>
+            <th class="black zelt">
+              <img class="zeltimg" src="https://i.ibb.co/q5ysr4C/Zelt.png">
+              Zelt: {{data.wohnraum.zeltanzahl}}</th>
           </button>
           </label>
 
@@ -48,7 +49,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Ein Dach über den Kopf und 4 wände zum wohlfüllen</span>
       </div>
           <button type="button" class="tabcontent" id="bungalow" (click)="bungalow()">
-            <th class="black bungalow">Bungalow: {{data.wohnraum.bungalowanzahl}}</th>
+            <th class="black bungalow">
+            <img class="bungalowimg" src="https://i.ibb.co/ysnzKYM/Small-House.jpg">
+              Bungalow: {{data.wohnraum.bungalowanzahl}}</th>
           </button>
           </label>
           <div class="upgrade-right">
@@ -63,7 +66,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">2 Etagen und ein Keller ist genug platz für Einige Leute</span>
       </div>
           <button type="button" class="tabcontent" id="haus" (click)="haus()">
-            <th class="black haus">Haus: {{data.wohnraum.hausanzahl}}</th>
+            <th class="black haus">
+              <img src="https://i.ibb.co/XLPwWDz/House.png" class="hausimg" alt="">
+              Haus: {{data.wohnraum.hausanzahl}}</th>
           </button>
          </label>
           <div class="upgrade-right">
@@ -78,7 +83,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Genug platz für die Ganze familie inklusive Oma, Opa, Onkel, Tante…</span>
       </div>
           <button type="button" class="tabcontent" id="einfamilienhaus" (click)="einfamilienhaus()">
-            <th class="black einfamilienhaus">Einfamilienhaus: {{data.wohnraum.einfamilienhausanzahl}}</th>
+            <th class="black einfamilienhaus">
+            <img class="einfamilienhausimg" src="https://i.ibb.co/Lr7RFrt/Einfamilienhaus.jpg">
+              Einfamilienhaus: {{data.wohnraum.einfamilienhausanzahl}}</th>
           </button>
 
           </label>
@@ -94,7 +101,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Wer Bohrt da schonwieder!?</span>
       </div>
           <button type="button" class="tabcontent" id="mehrfamilienhaus" (click)="mehrfamilienhaus()">
-            <th class="black mehrfamilienhaus">Mehrfamilienhaus: {{data.wohnraum.mehrfamilienhausanzahl}}</th>
+            <th class="black mehrfamilienhaus">
+            <img class="mehrfamilienhausimg" src="https://i.ibb.co/7Q1MDtc/Mehrfamilienhaus.png">
+              Mehrfamilienhaus: {{data.wohnraum.mehrfamilienhausanzahl}}</th>
           </button>
           </label>
           <div class="upgrade-right">
