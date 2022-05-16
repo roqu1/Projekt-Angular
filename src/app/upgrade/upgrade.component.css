@@ -8,11 +8,11 @@
 .Upgrade {
   text-align: center;
   background-color: grey;
-  margin: 0;
   min-width: 393px;
   right: 0;
   height: 100vh;
   outline:3px solid #131313;
+  margin: 0px 1px 0px 1px;
 }
 
 #faq {
