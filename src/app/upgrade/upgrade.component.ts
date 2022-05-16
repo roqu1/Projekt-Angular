@@ -79,15 +79,15 @@ export class UpgradeComponent implements OnInit {
     this.preis_mehrfamilienhaus = 200;
     // Infrastruktur
     this.preis_erdstrasse = 500;
-    this.percentageErdstrasse = 5;
+    this.percentageErdstrasse = 2;
     this.preis_wasser = 600;
-    this.percentagewasser = 10;
+    this.percentagewasser = 5;
     this.preis_strom = 1000;
-    this.percentagestrom = 25;
+    this.percentagestrom = 7.5;
     this.preis_strasse = 2000;
-    this.percentagestrasse=50;
+    this.percentagestrasse=10;
     this.preis_technik = 3000;
-    this.percentagetechnik = 100;
+    this.percentagetechnik = 15;
     
   }
 
@@ -634,21 +634,21 @@ export class UpgradeComponent implements OnInit {
         this.data.infrastruktur.stromanzahl=0;
         this.data.infrastruktur.strasseanzahl=0;
         this.data.infrastruktur.technikanzahl=0;
-        this.preis_bungalow=300;
-        this.preis_einfamilienhaus=1000;
+        this.preis_bungalow=50;
+        this.preis_einfamilienhaus=130;
         this.preis_erdstrasse=500;
-        this.preis_feld=400;
-        this.preis_fisch=200;
-        this.preis_haus=500;
-        this.preis_holzfaeller=600;
-        this.preis_mehrfamilienhaus=3000;
-        this.preis_mine=1000;
-        this.preis_oel=2500;
+        this.preis_feld=50;
+        this.preis_fisch=30;
+        this.preis_haus=80;
+        this.preis_holzfaeller=90;
+        this.preis_mehrfamilienhaus=200;
+        this.preis_mine=150;
+        this.preis_oel=300;
         this.preis_strasse=2000;
         this.preis_strom=1000;
         this.preis_technik=3000;
         this.preis_wasser=600;
-        this.preis_zelt=200;
+        this.preis_zelt=30;
         Swal.fire(
           'Erfolgreich!',
           'Deine Daten sind zurückgesetzt.',
