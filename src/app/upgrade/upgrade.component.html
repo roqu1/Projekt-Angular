@@ -121,6 +121,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
       </div>
           <button type="button" class="tabcontent" id="fisch" (click)="fischer()" >
             <th class="black fischer">
+            <img class="fischimg" src="https://i.ibb.co/cFsP718/Angler.png">
               Fischer: {{ data.arbeitstellen.fischeranzahl }}
             </th>
           </button></label>
@@ -140,6 +141,7 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
       </div>
           <button type="button" class="tabcontent" id="feld" (click)="feld()" >
             <th class="black feld">
+            <img class="feldimg" src="https://i.ibb.co/mT2Y4hc/Farmer.png">
               Feld: {{ data.arbeitstellen.feldanzahl }}
             </th>
           </button>
@@ -159,7 +161,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         </span>
       </div>
           <button type="button" class="tabcontent" id="holzfaeller" (click)="holzfaeller()">
-            <th class="black holzfäller">Holzfäller: {{data.arbeitstellen.holzfaeller}}</th>
+            <th class="black holzfäller">
+              <img src="https://i.ibb.co/FB6L5Yq/Holzf-ller.png" class="holzfaellerimg">
+              Holzfäller: {{data.arbeitstellen.holzfaeller}}</th>
           </button>
           </label>
           10<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
@@ -175,7 +179,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Grabt auch im Dreck rum, aber Tiefer</span>
        </div>
       <button type="button" class="tabcontent" id="mine" (click)="mine()">
-            <th class="black mine">Mine: {{data.arbeitstellen.mine}}</th>
+            <th class="black mine">
+              <img class="mineimg" src="https://i.ibb.co/s228hdX/Miner.png">
+              Mine: {{data.arbeitstellen.mine}}</th>
           </button>
           </label>
           50<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
@@ -191,7 +197,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Warte ab bis du einen Besuch von den USA bekommst</span>
           </div>
            <button type="button" class="tabcontent" id="oel" (click)="oel()">
-            <th class="black öl">Öl: {{data.arbeitstellen.oel}}</th>
+            <th class="black öl">
+              <img src="https://i.ibb.co/jZP56RZ/l.png" class="oelimg">
+              Öl: {{data.arbeitstellen.oel}}</th>
           </button>
           </label>
           70<img class="arbeiter" src="https://i.ibb.co/nkjmBMk/8QJ9zr9g.png">
@@ -209,7 +217,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Man kann sich zumindest die Wege besser merken</span>
          </div>
           <button type="button" class="tabcontent" id="erdstrasse" (click)="erdstrasse()">
-            <th class="black erdstrasse">Erdstrasse: {{data.infrastruktur.erdstrasseanzahl}}</th>
+            <th class="black erdstrasse">
+              <img src="https://i.ibb.co/zbPZWzh/Erstra-e.png" class="erdstrasseimg">
+              Erdstrasse: {{data.infrastruktur.erdstrasseanzahl}}</th>
           </button>
           </label>
           <div class="upgrade-right">
@@ -217,14 +227,16 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
           </div>
         <br />
         <div class="upgrade-left">
-        <th class="black" > P: {{preis_wasser}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
+        <th class="black" >{{preis_wasser}}<img class="geldkleiner" src="https://i.ibb.co/Syp38LS/EVajcbIQ.png"></th>
         </div>
         <label class="tooltip">
         <div class="tip_container">
         <span class="tooltiptext">Jetzt muss man zumindest nichtmehr zum Brunnen Laufen</span>
           </div>
           <button type="button" class="tabcontent" id="wasser" (click)="wasser()">
-            <th class="black wasserversorgung">Wasserversorgung: {{data.infrastruktur.wasseranzahl}}</th>
+            <th class="black wasserversorgung">
+              <img src="https://i.ibb.co/q1201KX/Wasserversorgung.png" class="wasserimg">
+              Wasserversorgung: {{data.infrastruktur.wasseranzahl}}</th>
           </button>
           </label>
           <div class="upgrade-right">
@@ -240,7 +252,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">AC/DC für alle</span>
         </div>
           <button type="button" class="tabcontent" id="strom" (click)="strom()">
-            <th class="black strom">Strom: {{data.infrastruktur.stromanzahl}}</th>
+            <th class="black strom">
+            <img src="https://i.ibb.co/j6NjK0F/Strom.png" class="stromimg">
+              Strom: {{data.infrastruktur.stromanzahl}}</th>
           </button>
           </label>
           <div class="upgrade-right">
@@ -254,7 +268,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">Löst sich nichtmehr im Regen auf</span>
         </div>  
         <button type="button" class="tabcontent" id="strasse" (click)="strasse()">
-            <th class="black straße">Straße: {{data.infrastruktur.strasseanzahl}}</th>
+            <th class="black straße">
+              <img src="https://i.ibb.co/jZVCM0N/Stra-e.png" class="strasse">
+              Straße: {{data.infrastruktur.strasseanzahl}}</th>
           </button>
           </label>
           <div class="upgrade-right">
@@ -268,7 +284,9 @@ Drücke auf den Planeten, um Geld zu bekommen. Mit dem Geld kannst du dann Häus
         <span class="tooltiptext">I´m with the science team</span>
         </div>
           <button type="button" class="tabcontent" id="technik" (click)="technik()">
-            <th class="black WdT">Wunder der Technik: {{data.infrastruktur.technikanzahl}}</th>
+            <th class="black WdT">
+            <img src="https://i.ibb.co/jVbB2nR/Wunder-der-Technik.png" class="technikimg">
+              Wunder der Technik: {{data.infrastruktur.technikanzahl}}</th>
           </button>
           </label>
           <div class="upgrade-right">
