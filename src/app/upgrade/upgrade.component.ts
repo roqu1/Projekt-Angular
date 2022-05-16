@@ -66,17 +66,17 @@ export class UpgradeComponent implements OnInit {
     this.mitarbeiterGesamtStr = '' + this.mitarbeiterGesamt;
     this.mitarbeiterStr = '' + this.mitarbeiter;
     // Arbeitstellen
-    this.preis_feld = 400;
-    this.preis_fisch = 200;
-    this.preis_holzfaeller = 600;
-    this.preis_mine = 1000;
-    this.preis_oel = 2500;
+    this.preis_feld = 50;
+    this.preis_fisch = 30;
+    this.preis_holzfaeller = 90;
+    this.preis_mine = 150;
+    this.preis_oel = 300;
     // Wohnraum
-    this.preis_zelt = 200;
-    this.preis_bungalow = 300;
-    this.preis_haus = 500;
-    this.preis_einfamilienhaus = 1000;
-    this.preis_mehrfamilienhaus = 3000;
+    this.preis_zelt = 30;
+    this.preis_bungalow = 50;
+    this.preis_haus = 80;
+    this.preis_einfamilienhaus = 130;
+    this.preis_mehrfamilienhaus = 200;
     // Infrastruktur
     this.preis_erdstrasse = 500;
     this.percentageErdstrasse = 5;
@@ -129,7 +129,7 @@ export class UpgradeComponent implements OnInit {
         if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          Math.round((preis *= 1.35));
+          Math.round((preis *= 1.45));
           this.item[1] = preis;
           return this.item;
         } else {
@@ -139,7 +139,7 @@ export class UpgradeComponent implements OnInit {
         if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          preis = preis *= 1.2;
+          preis = preis *= 1.35;
           this.item[1] = preis;
           return this.item;
         } else {
@@ -149,7 +149,7 @@ export class UpgradeComponent implements OnInit {
         if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          preis = preis *= 1.1;
+          preis = preis *= 1.25;
           this.item[1] = preis;
           return this.item;
         } else {
@@ -159,7 +159,7 @@ export class UpgradeComponent implements OnInit {
         if (this.data.click.counter >= preis) {
           this.kaufen(preis);
           this.item[2] = anzahl += 1;
-          preis = preis *= 1.05;
+          preis = preis *= 1.10;
           this.item[1] = preis;
           return this.item;
         } else {
