@@ -15,18 +15,6 @@ export class MitteComponent implements OnInit {
   constructor(public data : DataService) { 
    
   }
-
-  ausblenden() {
-
-    document.getElementById("1fisch").style.visibility = "hidden";
-    document.getElementById("2fisch").style.visibility = "hidden";
-    document.getElementById("3fisch").style.visibility = "hidden";
-
-    document.getElementById("1feld").style.visibility = "hidden";
-    document.getElementById("2feld").style.visibility = "hidden";
-    document.getElementById("3feld").style.visibility = "hidden";
-    };
-   
   ngOnInit() {
   }
 
