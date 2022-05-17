@@ -12,14 +12,10 @@ export class ErdeComponent implements OnInit {
   counterStr:String;
 
   constructor(public data : DataService) {
-    this.counterStr = ''+data.click.counter;
-    this.counterStr = this.counterStr.replace(
-      /\B(?=(\d{3})+(?!\d))/g,
-      '.'
-    );
+    
   }
 
-
+  
 
   add() {
     this.data.click.counter++;
@@ -30,6 +26,11 @@ export class ErdeComponent implements OnInit {
       setInterval(this.showAliens, 200000);
       this.isintervallRunning = true;
     }
+    this.counterStr = ''+this.data.click.counter;
+    this.counterStr = this.counterStr.replace(
+      /\B(?=(\d{3})+(?!\d))/g,
+      '.'
+    );
   }
 
   showAliens() {
@@ -38,6 +39,7 @@ export class ErdeComponent implements OnInit {
 
     setTimeout(() => {
       aliens.classList.add('hidden');
+      
     }, 2820);
   }
 }

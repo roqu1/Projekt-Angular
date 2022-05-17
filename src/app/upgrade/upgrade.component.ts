@@ -4,6 +4,7 @@ import { Arbeitstellen } from '../counter/Arbeitstellen';
 import { DataService } from '../dataservice/data.service';
 import Swal from 'sweetalert2';
 import { transformAll } from '@angular/compiler/src/render3/r3_ast';
+import { ErdeComponent } from '../erde/erde.component';
 
 @Component({
   selector: 'app-upgrade',
@@ -54,6 +55,7 @@ export class UpgradeComponent implements OnInit {
   }, 100);
   timer = setInterval(() => {
     this.interval();
+    
   }, 1000);
 
   constructor(public data: DataService) {
