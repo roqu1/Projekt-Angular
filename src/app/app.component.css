@@ -5,15 +5,3 @@ p {
   display: grid;
   grid-template-columns: auto auto auto;
 }
-
-#randomcookie {
-  position: absolute;
-  z-index: 50;
-  display: none;
-}
-
-.randomearth {
-  width: 100px;
-  cursor: pointer;
-  border-radius: 50%;
-}
