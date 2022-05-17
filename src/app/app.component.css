@@ -10,6 +10,8 @@ p {
 
 #randomcookie {
   position: absolute;
+  z-index: 50;
+  display: none;
 }
 
 .randomearth {
