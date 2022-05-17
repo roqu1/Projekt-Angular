@@ -11,6 +11,13 @@
   display: none;
 }
 
+.geld{
+  position: absolute;
+  top: 37px;
+  width: 30px;
+  height: auto;
+}
+
 #cookie {
   background-image: url('https://i.ibb.co/ZXv1d2h/Asghar-Asghar.gif');
   background-size: contain;
