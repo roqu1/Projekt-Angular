@@ -23,9 +23,8 @@ earthrandom() {
   const vertical = Math.floor(Math.random() * 700) + 1;
   earthrandom.style.marginLeft = horizontal+"px";
   earthrandom.style.marginTop = vertical+"px";
-  while(this.boolean==false) {
+
    earthrandom.style.display = "initial";
-  }
   earthrandom.style.display = "none";
   
 }
