@@ -15,6 +15,17 @@ h1 {
   background-color: grey;
 }
 
+.footerdiv {
+  background-color: gray;
+  float: left;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  width: auto;
+  height: auto;
+  padding: 100%;
+  background-size: 100%;
+}
+
 .fisch{
   background-image: url("https://i.ibb.co/wNhZj4J/Screenshot-50.png");
  background-size: 100%;
