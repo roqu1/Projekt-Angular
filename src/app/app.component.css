@@ -8,10 +8,12 @@ p {
   width: 100;
 }
 
-.randomcookie {
+#randomcookie {
   position: absolute;
 }
 
 .randomearth {
   width: 100px;
+  cursor: pointer;
+  border-radius: 50%;
 }
