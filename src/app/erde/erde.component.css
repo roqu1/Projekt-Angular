@@ -59,11 +59,9 @@
 }
 
 .aliens {
-  background-image: url(https://i.gifer.com/ZKZv.gif);
-  background-size: cover;
   width: 153px;
   height: 153px;
-  margin-top: 51%;
+  margin-top: -18%;
   left: 49%;
   z-index: 6;
   position: absolute;
