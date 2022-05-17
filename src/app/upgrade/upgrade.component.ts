@@ -80,13 +80,13 @@ export class UpgradeComponent implements OnInit {
     this.preis_einfamilienhaus = 130;
     this.preis_mehrfamilienhaus = 200;
     // Infrastruktur
-    this.preis_erdstrasse = 500;
+    this.preis_erdstrasse = 250;
     this.percentageErdstrasse = 2;
-    this.preis_wasser = 600;
+    this.preis_wasser = 350;
     this.percentagewasser = 5;
     this.preis_strom = 1000;
     this.percentagestrom = 7.5;
-    this.preis_strasse = 2000;
+    this.preis_strasse = 550;
     this.percentagestrasse=10;
     this.preis_technik = 3000;
     this.percentagetechnik = 15;
@@ -276,15 +276,15 @@ export class UpgradeComponent implements OnInit {
 
   mine() {
     if (this.data.click.counter >= this.preis_mine) {
-      if (this.mitarbeiter >= 50) {
+      if (this.mitarbeiter >= 25) {
         if (this.data.infrastruktur.erdstrasseanzahl >0 && this.data.infrastruktur.technikanzahl > 1 && this.data.infrastruktur.stromanzahl>0) {
         this.funktion_kaufen(this.preis_mine, this.data.arbeitstellen.mine);
         this.preis_mine = Math.round(this.item[1]);
         this.data.arbeitstellen.mine = this.item[2];
 
         this.addtocount();
-        this.mitarbeiterGesamt += 50;
-        this.mitarbeiter -= 50;
+        this.mitarbeiterGesamt += 25;
+        this.mitarbeiter -= 25;
         this.mitarbeiter_funktion(this.mitarbeiterGesamt, this.mitarbeiter);
 
         let text = this.data.arbeitstellen.mine.toString();
@@ -304,14 +304,14 @@ export class UpgradeComponent implements OnInit {
 
   oel() {
     if (this.data.click.counter >= this.preis_oel) {
-      if (this.mitarbeiter >= 70) {
+      if (this.mitarbeiter >= 40) {
         this.funktion_kaufen(this.preis_oel, this.data.arbeitstellen.oel);
         this.preis_oel = Math.round(this.item[1]);
         this.data.arbeitstellen.oel = this.item[2];
 
         this.addtocount();
-        this.mitarbeiterGesamt += 70;
-        this.mitarbeiter -= 70;
+        this.mitarbeiterGesamt += 40;
+        this.mitarbeiter -= 40;
         this.mitarbeiter_funktion(this.mitarbeiterGesamt, this.mitarbeiter);
 
         let text = this.data.arbeitstellen.oel.toString();
@@ -633,7 +633,7 @@ export class UpgradeComponent implements OnInit {
         this.data.infrastruktur.technikanzahl=0;
         this.preis_bungalow=50;
         this.preis_einfamilienhaus=130;
-        this.preis_erdstrasse=500;
+        this.preis_erdstrasse=250;
         this.preis_feld=50;
         this.preis_fisch=30;
         this.preis_haus=80;
@@ -641,10 +641,10 @@ export class UpgradeComponent implements OnInit {
         this.preis_mehrfamilienhaus=200;
         this.preis_mine=150;
         this.preis_oel=300;
-        this.preis_strasse=2000;
+        this.preis_strasse=750;
         this.preis_strom=1000;
         this.preis_technik=3000;
-        this.preis_wasser=600;
+        this.preis_wasser=350;
         this.preis_zelt=30;
         Swal.fire(
           'Erfolgreich!',

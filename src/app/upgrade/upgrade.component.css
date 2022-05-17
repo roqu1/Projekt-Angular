@@ -169,7 +169,7 @@
   /* Stelle der Tooltip text */
   position: absolute;
   display: inline-block;
-  z-index: 1;
+  z-index: 71;
   bottom: 4%;
   right: 110%;
 
