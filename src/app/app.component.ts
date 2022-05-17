@@ -11,7 +11,7 @@ export class AppComponent  {
   timer = setInterval(() => {
     this.earthrandom();
     
-  }, 5000);
+  }, 25000);
 
 earthrandom() {
   const earthrandom = (document.getElementById('randomcookie') as HTMLInputElement);
@@ -19,7 +19,12 @@ earthrandom() {
   const vertical = Math.floor(Math.random() * 700) + 1;
   earthrandom.style.marginLeft = horizontal+"px";
   earthrandom.style.marginTop = vertical+"px";
-  earthrandom.style.display = "initial";
+  var timer2 = setInterval(() => {
+   earthrandom.style.display = "initial";
+  }, 10000);
+  earthrandom.style.display = "none";
+  
+  
 }
 
 }
