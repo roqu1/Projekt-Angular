@@ -26,11 +26,11 @@ export class ErdeComponent implements OnInit {
       setInterval(this.showAliens, 200000);
       this.isintervallRunning = true;
     }
-    this.counterStr = ''+this.data.click.counter;
+   /* this.counterStr = ''+this.data.click.counter;
     this.counterStr = this.counterStr.replace(
       /\B(?=(\d{3})+(?!\d))/g,
       '.'
-    );
+    );*/
   }
 
   showAliens() {
