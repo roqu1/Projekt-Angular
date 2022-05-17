@@ -18,8 +18,11 @@ earthrandom() {
   const vertical = Math.floor(Math.random() * 700) + 1;
   earthrandom.style.marginLeft = horizontal+"px";
   earthrandom.style.marginTop = vertical+"px";
-  earthrandom.style.display = "initial";
-  
+
+  var timer = setInterval(() => {
+    earthrandom.style.display = "initial";
+  }, 1000);
+  earthrandom.style.display="none";
 }
 
 }
