@@ -22,7 +22,7 @@ export class ErdeComponent implements OnInit {
 
   ngOnInit() {
     if (!this.isintervallRunning) {
-      setInterval(this.showAliens, 2000);
+      setInterval(this.showAliens, 200000);
       this.isintervallRunning = true;
     }
      
