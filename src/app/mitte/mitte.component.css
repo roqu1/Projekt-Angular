@@ -1,14 +1,42 @@
-.black{
-  background-color: black;
-  width: 50px;
-  height: 50px;
+.anzeigen{
   visibility: hidden;
 }
 
-.blue{
-  background-color: blue;
-  width: 50px;
-  height: 50px;
-  visibility: hidden;
+.fisch{
+  background-image: url();
+ background-size: 100%;
+}
+.feld{
+ background-image: url(https://i.ibb.co/gPgLs7M/Acker.png);
+ background-size: 100%;
 }
 
+.mine{
+  background-image: url(https://i.ibb.co/nMZmBwD/Screenshot-40.png);
+  background-size: 100%;
+ }
+
+
+.wald{
+  background-image: url(https://i.ibb.co/gWgjYCT/Wald.png);
+  background-size: 100%;
+
+ }
+ 
+ .oel{ background-image: url(https://i.ibb.co/4d67N9T/Screenshot-44.png);
+  background-size: 100%;
+ }
+
+
+.hinten{
+  float: left;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  width: auto;
+  height: auto;
+  background-image: url(https://i.ibb.co/JkS22HS/STeinziegel.png);
+
+  padding: 12px;
+  background-size: 100%;
+
+}
