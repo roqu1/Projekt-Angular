@@ -336,6 +336,7 @@ export class UpgradeComponent implements OnInit {
       this.nomoney();
     }
   }
+
   bungalow() {
     if (this.data.click.counter >= this.preis_bungalow) {
       this.funktion_kaufen(
@@ -350,6 +351,7 @@ export class UpgradeComponent implements OnInit {
       this.nomoney();
     }
   }
+
   haus() {
     if (this.data.click.counter >= this.preis_haus) {
       this.funktion_kaufen(this.preis_haus, this.data.wohnraum.hausanzahl);
@@ -361,6 +363,7 @@ export class UpgradeComponent implements OnInit {
       this.nomoney();
     }
   }
+
   einfamilienhaus() {
     if (this.data.click.counter >= this.preis_einfamilienhaus) {
       this.funktion_kaufen(
@@ -375,6 +378,7 @@ export class UpgradeComponent implements OnInit {
       this.nomoney();
     }
   }
+
   mehrfamilienhaus() {
     if (this.data.click.counter >= this.preis_mehrfamilienhaus) {
       this.funktion_kaufen(
@@ -391,9 +395,8 @@ export class UpgradeComponent implements OnInit {
   }
 
   //Infrastruktur
-
   erdstrasse() {
-    //5 kps%
+    //2 kps%
     if (this.data.click.counter >= this.preis_erdstrasse) {
       this.funktion_kaufen(
         this.preis_erdstrasse,
@@ -408,7 +411,7 @@ export class UpgradeComponent implements OnInit {
   }
 
   wasser() {
-    //10 kps%
+    //5 kps%
     if (this.data.click.counter >= this.preis_wasser) {
       this.funktion_kaufen(
         this.preis_wasser,
@@ -421,8 +424,9 @@ export class UpgradeComponent implements OnInit {
       this.nomoney();
     }
   }
+
   strom() {
-    //25 kps%
+    //7.5 kps%
     if (this.data.infrastruktur.stromanzahl==5) {
       Swal.fire ({
         icon:'error',
@@ -434,7 +438,6 @@ export class UpgradeComponent implements OnInit {
       this.funktion_kaufen(this.preis_strom,this.data.infrastruktur.stromanzahl);
       if(this.data.infrastruktur.stromanzahl==0) {
         this.preis_strom = 2000;
-    
       } else if(this.data.infrastruktur.stromanzahl==1) {
         this.preis_strom = 4000;
       } else if (this.data.infrastruktur.stromanzahl==2) {
@@ -442,17 +445,16 @@ export class UpgradeComponent implements OnInit {
       } else if (this.data.infrastruktur.stromanzahl==3) {
         this.preis_strom = 16000;
       }
-      this.data.infrastruktur.stromanzahl = this.item[2];
-      
-      this.addtocount();
-    } else {
-      this.nomoney();
+      this.data.infrastruktur.stromanzahl = this.item[2]; 
+        this.addtocount();
+      } else {
+        this.nomoney();
+      }
     }
   }
-}
 
   strasse() {
-      //50 kps%
+      //10 kps%
       if (this.data.click.counter >= this.preis_strasse) {
         this.funktion_kaufen(
           this.preis_strasse,
@@ -466,9 +468,8 @@ export class UpgradeComponent implements OnInit {
       }
     }
 
-
     technik() {
-      //100 kps%
+      //15 kps%
       if (this.data.infrastruktur.technikanzahl==2) {
         Swal.fire ({
           icon:'error',
@@ -488,10 +489,6 @@ export class UpgradeComponent implements OnInit {
       }
     }
   }
-
-
-
-
 
   // Fehler/Meldungen
   nomoney() {
@@ -562,8 +559,6 @@ export class UpgradeComponent implements OnInit {
     const haus = (document.getElementById('haus') as HTMLInputElement);
     const einfamilienhaus = (document.getElementById('einfamilienhaus') as HTMLInputElement);
     const mehrfamilienhaus = (document.getElementById('mehrfamilienhaus') as HTMLInputElement);
-
-  
     
     this.funktion_button(fisch,this.preis_fisch);
     this.funktion_button(feld,this.preis_feld);
@@ -671,9 +666,6 @@ export class UpgradeComponent implements OnInit {
     const opendiv = (document.getElementById('textfaq') as HTMLInputElement);
     opendiv.style.display= "unset";
   }
-
-  
-  
 
   ngOnInit() {}
 }
