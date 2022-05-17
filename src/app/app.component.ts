@@ -19,7 +19,6 @@ earthrandom() {
   earthrandom.style.marginLeft = horizontal+"px";
   earthrandom.style.marginTop = vertical+"px";
   earthrandom.style.display = "initial";
-  earthrandom.style.display = "none";
   
 }
 
