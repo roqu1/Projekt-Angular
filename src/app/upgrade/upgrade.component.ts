@@ -250,7 +250,7 @@ export class UpgradeComponent implements OnInit {
           this.preis_holzfaeller,
           this.data.arbeitstellen.holzfaeller
         );
-        this.preis_feld = Math.round(this.item[1]);
+        this.preis_holzfaeller = Math.round(this.item[1]);
         this.data.arbeitstellen.holzfaeller = this.item[2];
 
         this.addtocount();
